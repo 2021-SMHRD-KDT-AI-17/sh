@@ -153,7 +153,7 @@ button img {
                <c:when test="${page1 eq '2' }">
                      <c:forEach items="${q_list }" var="q" begin="20" end="${q_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+10 }</td>
+                        <td>${s.count+20 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>
@@ -180,7 +180,7 @@ button img {
                      <c:when test="${page1 eq '2' }">
                      <c:forEach items="${q_list }" var="q" begin="20" end="39" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+10 }</td>
+                        <td>${s.count+20 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>
@@ -191,7 +191,7 @@ button img {
                      <c:when test="${page1 eq '3' }">
                      <c:forEach items="${q_list }" var="q" begin="40" end="${q_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+20 }</td>
+                        <td>${s.count+40 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>

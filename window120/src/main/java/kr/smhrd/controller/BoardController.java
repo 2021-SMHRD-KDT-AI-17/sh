@@ -217,7 +217,7 @@ public class BoardController {
          }else {
             System.out.println("업로드 실패...");
          }
-         return "redirect:/goBoardMain";
+         return "redirect:/goDebateBoard";
       }
    
    // 질문 게시판 등록
@@ -282,7 +282,7 @@ public class BoardController {
             }else {
                System.out.println("업로드 실패...");
             }
-            return "redirect:/goBoardMain";
+            return "redirect:/goDataBoard";
          }
    
    // 토론 게시판 Detail 보기
@@ -646,7 +646,7 @@ public class BoardController {
             e.printStackTrace();
          }
          debateMapper.debateUpdate(debate);
-		return "redirect:/goDebate";
+		return "redirect:/goDebateBoard";
 	}
 	
 	// 토론게시판 삭제 + 해당 개시판 댓글 삭제
@@ -655,7 +655,7 @@ public class BoardController {
 		debateMapper.deleteDebate(d_idx);
 		debateMapper.deleteDebateComment(d_idx);
 		
-		return "redirect:/goDebate";
+		return "redirect:/goDebateBoard";
 	}
 	
 	// 수업자료게시판 수정하러 가기
@@ -694,7 +694,7 @@ public class BoardController {
             e.printStackTrace();
          }
          fboardMapper.fboardUpdate(fboard);
-		return "redirect:/goFboard";
+		return "redirect:/goDataBoard";
 	}
 	
 	// 수업자료게시판 삭제 + 해당 개시판 댓글 삭제
@@ -703,7 +703,7 @@ public class BoardController {
 		fboardMapper.deleteFboard(fb_idx);
 		fboardMapper.deleteFboardComment(fb_idx);
 		
-		return "redirect:/goFboard";
+		return "redirect:/goDataBoard";
 	}
 	
 	

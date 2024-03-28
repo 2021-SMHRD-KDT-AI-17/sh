@@ -23,7 +23,7 @@
    width: 300px;
    height: auto;
    position: fixed;
-   top: 50%;
+   top: 45%;
    left: 50%;
    transform: translate(-50%, -50%);
 }
@@ -65,18 +65,18 @@ button img {
    %>
    
 
-<div class="window" style="height: 930px; width: 1300px;">
-  <div class="title-bar" style="height: 20px;">
+<div class="window" style="height: 730px; width: 1300px;">
+<!--   <div class="title-bar" style="height: 20px;">
     <div class="title-bar-text" style="font-size:20px">게시판</div>
     <div class="title-bar-controls">
       <button aria-label="Minimize"></button>
       <button aria-label="Maximize"></button>
       <button aria-label="Close" onclick="window.location.href='goMain'"></button>
     </div>
-  </div>
+  </div> -->
 
-<div class="window-body">
-<button style="width:260px; height:100px; font-size:25px; margin-top:50px;">
+<div class="window-body" style="height:80%">
+<button style="width:260px; height:100px; font-size:25px; margin-top:31px;">
     <img src="https://win98icons.alexmeub.com/icons/png/users-2.png">
     <%=loginMember.getId()%><br>
     <%=loginMember.getName()%>
@@ -93,26 +93,26 @@ button img {
 <p>진행중인 이벤트<p>
 </button>
 <br>
-<button style="width:260px; height:600px;margin-top:260px;">
-    <img src="resources/assets/images/smhrd3.png" style="width:237px; height:580px;">
+<button disabled style="width:260px; height:380px;margin-top:260px;">
+    <img src="resources/assets/images/smhrd2.png" style="width:237px; height:360px;">
 </button>
 
   <menu role="tablist" class="multirows" style="height: 35px; width: 980px;  margin-left:280px;">
    <li role="tab" aria-selected="true" class="tab-item">
     <img alt="" src="https://win98icons.alexmeub.com/icons/png/chm-2.png">
-    <a href="#Question-tab" onclick="window.location.href='goQboard'" style="font-size : 18px; margin-top : 10px;">질문 게시판</a>
+    <a href="#Question-tab" onclick= "window.location.href='goQboard'"  style="font-size : 18px; margin-top : 10px;">질문 게시판</a>
    </li>
     <li role="tab" aria-selected="false" class="tab-item">
     <img alt="" src="https://win98icons.alexmeub.com/icons/png/address_book_pad_users.png">
-    <a href="#debate-tab" onclick="window.location.href='goDebateBoard'" style="font-size : 18px; margin-top : 10px;">토론 게시판</a></li>
+    <a href="#debate-tab" onclick="window.location.href='goDebateBoard'"  style="font-size : 18px; margin-top : 10px;">토론 게시판</a></li>
     <li role="tab" aria-selected="false" class="tab-item">
     <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
     <a href="#data-tab" onclick="showTab('data-tab')" style="font-size : 18px; margin-top : 10px;">수업자료 게시판</a></li>
   </menu>
   
-<div class="window tab-content" role="tabpanel" id="Question-tab" style="height: 820px; width: 987px; margin-left:130px; margin-top:414px;">
+<div class="window tab-content" role="tabpanel" id="data-tab" style="height: 600px; width: 987px; margin-left:130px;  margin-top:40px;">
     <div class="window-body" >
-        <div class="sunken-panel" style="height: 800px; width: 970px;">
+        <div class="sunken-panel" style="height: 580px; width: 970px;">
             <table class="interactive">
                 <thead>
                     <tr>
@@ -124,68 +124,13 @@ button img {
                     </tr>
                 </thead>
                 <tbody style="font-size:20px">   
-     
-               </tbody>
-            </table>
-      <img alt="" src="resources/assets/images/smhrd1.png" style="position: absolute; top: calc(100% + 10px); width: 100%; left: 50%; transform: translateX(-50%);">
-        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-        <input type="text" placeholder="검색어를 입력하세요." style="padding-left: 40px; height:25px;">
-    <img src="https://win98icons.alexmeub.com/icons/png/search_file-2.png" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
-       <input type="submit" style="height:25px;" value="검색">
-        </div>
-        </div>
-    </div>
-</div>
-<div class="window tab-content" role="tabpanel" id="debate-tab" style="height: 820px; width: 987px; margin-left:130px; margin-top:414px;">
-    <div class="window-body" >
-        <div class="sunken-panel" style="height: 800px; width: 970px;">
-            <table class="interactive">
-                <thead>
-                    <tr>
-                        <th style="width: 7%; font-size:20px">번호</th>
-                        <th style="width: 60%; font-size:20px">제목</th>
-                        <th style="width: 20%; font-size:20px">작성자</th>
-                        <th style="width: 15%; font-size:20px">작성일</th>
-                        <th style="width: 10%; font-size:20px">조회수</th>
-                    </tr>
-                </thead>
-                <tbody style="font-size:20px">
-            
-   
-               </tbody>
-            </table>
-      <img alt="" src="resources/assets/images/smhrd1.png" style="position: absolute; top: calc(100% + 10px); width: 100%; left: 50%; transform: translateX(-50%);">
-        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-        <input type="text" placeholder="검색어를 입력하세요." style="padding-left: 40px; height:25px;">
-    <img src="https://win98icons.alexmeub.com/icons/png/search_file-2.png" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
-       <input type="submit" style="height:25px;" value="검색">
-        </div>
-        </div>
-    </div>
-</div>
-<div class="window tab-content" role="tabpanel" id="data-tab" style="height: 820px; width: 987px; margin-left:130px; margin-top:414px;">
-    <div class="window-body" >
-        <div class="sunken-panel" style="height: 800px; width: 970px;">
-            <table class="interactive">
-                <thead>
-                    <tr>
-                        <th style="width: 7%; font-size:20px">번호</th>
-                        <th style="width: 60%; font-size:20px">제목</th>
-                        <th style="width: 20%; font-size:20px">작성자</th>
-                        <th style="width: 15%; font-size:20px">작성일</th>
-                        <th style="width: 10%; font-size:20px">조회수</th>
-                    </tr>
-                </thead>
-                <tbody style="font-size:20px">
-
-            
-            <!-- 페이징 구현 -->
+                <!-- 페이징 구현 -->
                <c:choose>
                <c:when test="${f_size<20 }">
                   <c:forEach items="${f_list }" var="f" begin="0" end="${f_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
@@ -198,7 +143,7 @@ button img {
                   <c:forEach items="${f_list }" var="f" begin="0" end="19" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
@@ -206,10 +151,10 @@ button img {
                   </c:forEach>
                </c:when>
                <c:when test="${page3 eq '2' }">
-                     <c:forEach items="${d_list }" var="f" begin="20" end="${f_size }" step="1" varStatus="s">
+                     <c:forEach items="${f_list }" var="f" begin="20" end="${f_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count+20 }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
@@ -225,7 +170,7 @@ button img {
                      <c:forEach items="${f_list }" var="f" begin="0" end="19" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
@@ -233,21 +178,21 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page3 eq '2' }">
-                     <c:forEach items="${f_list }" var="d" begin="20" end="39" step="1" varStatus="s">
+                     <c:forEach items="${f_list }" var="f" begin="20" end="39" step="1" varStatus="s">
                      <tr>
                         <td>${s.count+20 }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
                      </tr>
                      </c:forEach>
                      </c:when>
-                     <c:when test="${pagef eq '3' }">
-                     <c:forEach items="${f_list }" var="d" begin="40" end="${f_size }" step="1" varStatus="s">
+                     <c:when test="${page3 eq '3' }">
+                     <c:forEach items="${q_list }" var="f" begin="40" end="${f_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count+40 }</td>
-                        <td><a href="DebateContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
+                        <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
                         <td>${f.user_id }</td>
                         <td>${f.fb_dt }</td>
                         <td>${f.fb_views }</td>
@@ -257,33 +202,47 @@ button img {
                      </c:choose>
                </c:when>
             </c:choose>
-
-             <a href="goFboardWrite"><button id="writer">작성하러가기</button></a>
-             
-             <c:choose>
-               <c:when test="${f_size<20 }">
-                  <tr><td id="page1">페이지 : <a href="goDataBoard">[1]</a><span></td><tr>
-               </c:when>
-               <c:when test="${f_size>=20 and q_size<40 }">
-                  <tr><td id="page1">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></td><tr>
-               </c:when>
-               <c:when test="${f_size>=40}">
-                  <tr><td id="page1">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></span><a href="goFboardMain3">[3]</a></td><tr>
-               </c:when>
-            </c:choose>   
                </tbody>
             </table>
-      <img alt="" src="resources/assets/images/smhrd1.png" style="position: absolute; top: calc(100% + 10px); width: 100%; left: 50%; transform: translateX(-50%);">
+            <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+            <c:choose>
+               <c:when test="${f_size<20 }">
+                  <br>
+                  <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDataBoard">[1]</a><span></p> 
+                  <br>
+                  <br>
+               </c:when>
+               <c:when test="${f_size>=20 and f_size<40 }">
+                  <br>
+                  <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></p>
+                  <br>
+                  <br>
+               </c:when>
+               <c:when test="${f_size>=40}">
+                  <br>
+                  <p id="page1" style="text-align: center; font-size:20px;"">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></span><a href="goFboardMain3">[3]</a></p>
+                  <br>
+                  <br>
+               </c:when>
+            </c:choose>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 91%; transform: translateX(-50%);">
+            <br>
+            <span><button id="writer" onclick="window.location.href='goFboardWrite'" style="height:30px;">게시글작성</button></span>
+            <br>
+            </div>
+      <!-- <img alt="" src="resources/assets/images/smhrd1.png" style="bottom: 0; position: absolute; top: 100%; width: 100%; left: 50%; transform: translateX(-50%);"> -->
         <form action="selectFboard" method="post" >
-        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-        <input type="text" placeholder="검색어를 입력하세요." name="select" style="padding-left: 40px; height:25px;">
-       <img src="https://win98icons.alexmeub.com/icons/png/search_file-2.png" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
+        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); ">
+        <input type="text" placeholder="검색어를 입력하세요." style="padding-left: 40px; height:25px;" name="select">
+        <img src="https://win98icons.alexmeub.com/icons/png/search_file-2.png" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">
        <input type="submit" style="height:25px;" value="검색">
         </div>
         </form>
         </div>
     </div>
 </div>
+
   <!-- 다른 탭 패널은 간결함을 위해 생략 -->
   
 </div>
