@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smhrd.mapper.CalendarMapper">
+    <insert id="insertEvent" parameterType="kr.smhrd.entity.Calendar">
+    INSERT INTO calendar (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM calendar 
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
+    
+    <select id="CalList" resultType="kr.smhrd.entity.Calendar">
+    	SELECT * FROM calendar
+    </select>
+    
+    <insert id="tinsertEvent" parameterType="kr.smhrd.entity.tCalendar">
+    INSERT INTO tCalendar (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM tCalendar 
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
+    
+    <select id="tCalList" resultType="kr.smhrd.entity.tCalendar">
+    	SELECT * FROM tCalendar
+    </select>
+    
+<delete id="deleteEvent" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM calendar
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>
+    
+    <delete id="tdeleteEvent" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM tCalendar
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>
+</mapper>
