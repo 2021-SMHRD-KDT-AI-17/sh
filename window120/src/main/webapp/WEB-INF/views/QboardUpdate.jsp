@@ -7,11 +7,7 @@
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="resources/assetsBoard/css/main.css" />
-		<link rel="stylesheet" href="resources/assetsBoard/css/board.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 <body>
 			<div id = "board">
