@@ -17,28 +17,37 @@
 	<div class="sunken-panel" id="board" style="height: 100%; width: 100%;">
 		<form action="QbaordInsert" method="post" enctype="multipart/form-data">
 			<table class="interactive" id="list" style="height: 100%; width: 100%;">
-				<thead>
+				<thead style="font-size: 30px;">
 				<tr>
-					<td>제목</td>
-					<td><input type="text" name="qb_title"></td>
+					<th style="width:20%">제목</th>
+					<th><input style="width:100%; height: 80%; padding:0; border: none; font-size:20px;" type="text" name="qb_title"></th>
 				</tr>
 				<tr>
-					<td>작성자</td>
-					<td><input type="text" readonly value="${loginMember.name }"
-						name="user_id"></td>
+					<th style="width:20%">작성자</th>
+					<th><input style="width:100%; height: 80%; font-size:20px;" type="text" readonly value="${loginMember.name }"
+						name="user_id"></th>
 				</tr>
 				<tr>
-					<td colspan="2">내용</td>
+				<th style="width:20%">파일</th>
+				<th><input type="file" style="float: left;" name="qb_file"></th>
+				</tr>
+				<tr>
+					<th colspan="2">내용</th>
 				</tr>
 				</thead>
-				<tbody>
-				<tr>
-					<td colspan="2"><input type="file" style="float: right;"
-						name="qb_file"> <textarea rows="10" style="resize: none;"
-							name="qb_content"></textarea></td>
+				<tbody style="width: 100%; height: 500px; font-size: 20px;">
+			
+						<tr>
+						<td colspan="2">
+						<textarea rows="10" style="width:100%; height: 100%; font-size:20px;"
+							name="qb_content"></textarea>
+							</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="reset" value="초기화"> <input type="submit" value="작성하기"></td>
+					<td colspan="2">
+					<div style="text-align: right; padding: 8px; height: 1%;">
+					<input type="reset" value="초기화"> <input type="submit" value="작성하기"></td>
+					</div>
 				</tr>
 				</tbody>
 			</table>

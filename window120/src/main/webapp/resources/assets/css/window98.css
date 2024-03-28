@@ -280,7 +280,7 @@ a.desktop-item {
 .window {
     background: #b9b9b9;
     margin: 0.5rem;
-    margin-top: -5rem;
+/*     margin-top: -5rem; */
     z-index: 999999;
     resize: both;
     overflow: hidden;
