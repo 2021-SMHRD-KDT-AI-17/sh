@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="resources/assets/css/window98.css?after" />
 <!-- <link rel="stylesheet" href="https://unpkg.com/98.css">
  --></head>
-<body>
+<body onload="openPopup()">
 	<% Member loginMember = (Member) session.getAttribute("loginMember"); %>
 	
 <!-- 	
