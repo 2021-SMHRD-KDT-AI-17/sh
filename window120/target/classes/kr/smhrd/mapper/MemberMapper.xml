@@ -3,7 +3,7 @@
 <mapper namespace="kr.smhrd.mapper.MemberMapper">
 
 	<insert id="memberInsert" parameterType="kr.smhrd.entity.Member">
-		insert into user_info values(0,#{id},#{pw},#{name},#{email},#{tel},#{birthday},0)
+		insert into user_info values(0,#{id},#{pw},#{name},#{email},#{tel},#{birthday},0,0)
 	</insert>
 	
 	<select id="memberSelect" parameterType="kr.smhrd.entity.Member" resultType="kr.smhrd.entity.Member">

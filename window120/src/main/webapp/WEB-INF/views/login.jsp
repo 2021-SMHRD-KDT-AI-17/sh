@@ -84,11 +84,19 @@
 </body>
 </html>
 <script>
+    // loginC 함수를 직접 호출하도록 수정
     document.getElementById("joinButton").addEventListener("click", function(event) {
         // 기본 동작인 페이지 이동을 막음
         event.preventDefault();
         // 버튼을 클릭했을 때 수행할 동작을 여기에 작성
         window.location.href = "goJoin"; // 회원가입 페이지로 이동
+    });
+
+    // loginC 함수를 직접 호출하도록 수정
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        // 폼 제출 방지를 해제하고 직접 로그인 함수를 호출
+        event.preventDefault();
+        loginC();
     });
 </script>
 	<!-- Scripts -->
@@ -131,7 +139,7 @@ function loginC(){
             if(data == 1){
                 $('#resultIdCheck').text('죄송합니다. 등록되지 않은 아이디입니다.');
             } else if(data == 2){
-                $('#loginForm').submit();
+            	$('#loginForm').submit();
             } else if(data == 3){
                 $('#resultIdCheck').text('죄송합니다. 비밀번호가 틀렸습니다.');
             }
