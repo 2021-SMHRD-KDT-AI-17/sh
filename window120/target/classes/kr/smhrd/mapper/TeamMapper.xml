@@ -18,7 +18,7 @@
 		select * from team_info where team_number=#{team_number}
 	</select>
 	
-	<select id="selectTeamMember" parameterType="int">
+	<select id="selectTeamMember" parameterType="int" resultType="kr.smhrd.entity.Member">
 		select * from user_info where team_number=#{team_number}
 	</select>
 	
