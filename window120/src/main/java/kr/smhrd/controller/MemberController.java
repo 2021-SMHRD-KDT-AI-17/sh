@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.smhrd.entity.Attendance;
 import kr.smhrd.entity.KakaoUserInfo;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Message;
@@ -171,21 +172,20 @@ public class MemberController {
 	// 아침 팝업 시간데이터
 	@RequestMapping("/morningPopup")
 	public String morningPopup(HttpServletRequest request) {
-		String a = request.getParameter("a");
-		String b = request.getParameter("b");
-		System.out.println(a);
-		System.out.println(b);
+		String name = request.getParameter("name");
 		
+		Attendance att = new Attendance(name);
+		memberMapper.intime(att);
 		return "selfClose";
 	}
 	
 	// 저녁 팝업 시간데이터
 	@RequestMapping("/eveningPopup")
 	public String eveningPopup(HttpServletRequest request) {
-		String a = request.getParameter("a");
-		String b = request.getParameter("b");
-		System.out.println(a);
-		System.out.println(b);
+		String name = request.getParameter("name");
+		
+		Attendance att = new Attendance(name);
+		memberMapper.outtime(att);
 		
 		return "selfClose";
 	}

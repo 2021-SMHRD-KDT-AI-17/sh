@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import kr.smhrd.entity.Attendance;
 import kr.smhrd.entity.Member;
 
 // 이 클래스가 mapper파일임을 알려줘야 함
@@ -35,6 +36,10 @@ public interface MemberMapper {
 	public void rankUpdate(String id);
 
 	public Member findByEmail(String email);
+
+	public void intime(Attendance att);
+
+	public void outtime(Attendance att);
 	
 	
 }

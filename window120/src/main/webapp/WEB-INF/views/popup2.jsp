@@ -65,8 +65,8 @@
 			<h1 id="qrtext">아 맞다 큐알!</h1>
 
 			<form action="eveningPopup" method="post">
-				<input type="hidden" value="입실" name="a">
-				<input type="hidden" value="<%=loginMember.getName() %>" name="b">
+				<input type="hidden" value="퇴실" name="a">
+				<input type="hidden" value="<%=loginMember.getName() %>" name="name">
 				<button id="eveningBtn" name="data" id="oo">아침</button>
 			</form>
 		</div>

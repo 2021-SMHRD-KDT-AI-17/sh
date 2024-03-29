@@ -29,5 +29,13 @@
 	<update id="rankUpdate" parameterType="kr.smhrd.entity.Member">
 		update user_info set rank_num=1 where id=#{id}
 	</update>
+	
+	<insert id="intime" parameterType="kr.smhrd.entity.Attendance">
+		insert into attendance(name, in_time) values = (#{name},Now())
+	</insert>
+	
+	<update id="outtime" parameterType="kr.smhrd.entity.Attendance">
+		update attendance set out_time = Now() where name={name}
+	</update>
 
 </mapper>
