@@ -64,9 +64,10 @@
 			</div>
 			<h1 id="qrtext">아 맞다 큐알!</h1>
 
-			<form action="" method="post" id="sysy0514">
-				<input type="hidden" value=${data }>
-				<button id="morningBtn" name="data">아침</button>
+			<form action="morningPopup" method="post">
+				<input type="hidden" value="입실" name="a">
+				<input type="hidden" value="<%=loginMember.getName() %>" name="b">
+				<button id="morningBtn" name="data" id="oo">아침</button>
 			</form>
 		</div>
 	</div>
@@ -90,35 +91,10 @@
 	var now = new Date();
     var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
     
+    $('#oo').submit();
     
-    
-    $.ajax({
-        url : 'morningPopup',
-        data : {'time':time},
-        type : 'get',
-        success : function(data){
-        	
-        		alert("가져옴");
-
-        },
-        error : function(){
-            alert("에러")
-            
-        }
-    })
-    
-    $('#sysy0514').submit();
-    
-    self.close();
     
 });
 </script>
-  	<script src="resources/assets/js/jquery.min.js"></script>
-	<script src="resources/assets/js/jquery.scrolly.min.js"></script>
-	<script src="resources/assets/js/jquery.scrollex.min.js"></script>
-	<script src="resources/assets/js/skel.min.js"></script>
-	<script src="resources/assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="resources/assets/js/main.js"></script>
 </body>
 </html>

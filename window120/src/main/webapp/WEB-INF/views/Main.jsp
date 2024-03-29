@@ -858,7 +858,7 @@
             var attendanceValue = getCookie(email + '_attendance_check2');
             // 원하는 시간 설정
             var scheduledTime = new Date();
-            scheduledTime.setHours(17, 30, 0, 0); // 시, 분, 초, 밀리초
+            scheduledTime.setHours(17, 50, 0, 0); // 시, 분, 초, 밀리초
             // 현재 시간 가져오기
             var currentTime = new Date();
             // 현재 시간이 원하는 시간과 같거나 크면 퇴실 알림 표시

@@ -125,72 +125,36 @@ public class MemberController {
 	}
 	
 	// 아침팝업 띄우기
-		@RequestMapping("/goPopup1")
-		public String goPopup1(HttpServletRequest request, Model model, Member member) {
-			System.out.println("일단 넘어옴");
-			Cookie[] cookies = request.getCookies();
-		    String emailAttendanceCheck1 = null;
-		    
-		    if (cookies != null) {
-		        for (Cookie cookie : cookies) {
-		            if ((member.getEmail()+"attendance_check1").equals(cookie.getName())) {
-		                emailAttendanceCheck1 = cookie.getValue();
-		                System.out.println("입실쿠키");
-		            }
-		        }
-		    }
-
-		    // 쿠키 값을 모델에 추가하여 JSP로 전달
-		    model.addAttribute("emailAttendanceCheck1", emailAttendanceCheck1);
-
-		    return "popup1"; // 뷰 이름 반환
-		}
-		
-		// 저녁팝업 띄우기
-		@RequestMapping("/goPopup2")
-		public String goPopup2(HttpServletRequest request, Model model, Member member) {
-			System.out.println("일단 넘어옴");
-			Cookie[] cookies = request.getCookies();
-		    String emailAttendanceCheck2 = null;
-		    
-		    if (cookies != null) {
-		        for (Cookie cookie : cookies) {
-		            if ((member.getEmail()+"_attendance_check2").equals(cookie.getName())) {
-		                emailAttendanceCheck2 = cookie.getValue();
-		                System.out.println("퇴실쿠키");
-		            }
-		        }
-		    }
-
-		    // 쿠키 값을 모델에 추가하여 JSP로 전달
-		    model.addAttribute("emailAttendanceCheck2", emailAttendanceCheck2);
-
-		    return "popup2"; // 뷰 이름 반환
-		}
-		
-		// 아침 팝업 시간데이터
-		@RequestMapping("/morningPopup")
-		public int morningPopup(@RequestParam("time") String time) {
-			
-			return 1;
-		}
-		
-		// 저녁 팝업 시간데이터
-	
-	// 팝업 + 정보전달
-	@RequestMapping("/poppop")
-	public String poppop(HttpServletRequest request, Model model, Member member) {
+	@RequestMapping("/goPopup1")
+	public String goPopup1(HttpServletRequest request, Model model, Member member) {
 		System.out.println("일단 넘어옴");
 		Cookie[] cookies = request.getCookies();
 	    String emailAttendanceCheck1 = null;
+	    
+	    if (cookies != null) {
+	        for (Cookie cookie : cookies) {
+	            if ((member.getEmail()+"attendance_check1").equals(cookie.getName())) {
+	                emailAttendanceCheck1 = cookie.getValue();
+	                System.out.println("입실쿠키");
+	            }
+	        }
+	    }
+
+	    // 쿠키 값을 모델에 추가하여 JSP로 전달
+	    model.addAttribute("emailAttendanceCheck1", emailAttendanceCheck1);
+
+	    return "popup1"; // 뷰 이름 반환
+	}
+	
+	// 저녁팝업 띄우기
+	@RequestMapping("/goPopup2")
+	public String goPopup2(HttpServletRequest request, Model model, Member member) {
+		System.out.println("일단 넘어옴");
+		Cookie[] cookies = request.getCookies();
 	    String emailAttendanceCheck2 = null;
 	    
 	    if (cookies != null) {
 	        for (Cookie cookie : cookies) {
-	            if ((member.getEmail()+"_attendance_check1").equals(cookie.getName())) {
-	                emailAttendanceCheck1 = cookie.getValue();
-	                System.out.println("입실쿠키");
-	            }
 	            if ((member.getEmail()+"_attendance_check2").equals(cookie.getName())) {
 	                emailAttendanceCheck2 = cookie.getValue();
 	                System.out.println("퇴실쿠키");
@@ -199,11 +163,33 @@ public class MemberController {
 	    }
 
 	    // 쿠키 값을 모델에 추가하여 JSP로 전달
-	    model.addAttribute("emailAttendanceCheck1", emailAttendanceCheck1);
 	    model.addAttribute("emailAttendanceCheck2", emailAttendanceCheck2);
 
-	    return "Main"; // 뷰 이름 반환
+	    return "popup2"; // 뷰 이름 반환
 	}
+	
+	// 아침 팝업 시간데이터
+	@RequestMapping("/morningPopup")
+	public String morningPopup(HttpServletRequest request) {
+		String a = request.getParameter("a");
+		String b = request.getParameter("b");
+		System.out.println(a);
+		System.out.println(b);
+		
+		return "selfClose";
+	}
+	
+	// 저녁 팝업 시간데이터
+	@RequestMapping("/eveningPopup")
+	public String eveningPopup(HttpServletRequest request) {
+		String a = request.getParameter("a");
+		String b = request.getParameter("b");
+		System.out.println(a);
+		System.out.println(b);
+		
+		return "selfClose";
+	}
+	
 	
     // 카카오 사용자 정보 가져오는 메서드
     private KakaoUserInfo getKakaoUserInfo(String accessToken) {

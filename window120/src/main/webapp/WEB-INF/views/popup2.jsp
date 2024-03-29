@@ -36,7 +36,7 @@
 	margin-bottom: 0;
 }
 
-#morningBtn {
+#eveningBtn {
 	padding: 10px 20px;
 	background-color: #008bfd;
 	color: #fff;
@@ -64,29 +64,37 @@
 			</div>
 			<h1 id="qrtext">아 맞다 큐알!</h1>
 
-			<form action="poppop" method="post">
-				<button type="submit" id="eveningBtn" name="data">저녁</button>
+			<form action="eveningPopup" method="post">
+				<input type="hidden" value="입실" name="a">
+				<input type="hidden" value="<%=loginMember.getName() %>" name="b">
+				<button id="eveningBtn" name="data" id="oo">아침</button>
 			</form>
 		</div>
 	</div>
 <script>
-	//저녁 버튼 클릭 이벤트 처리
+
+	//아침 버튼 클릭 이벤트 처리
 	document.getElementById("eveningBtn").addEventListener("click", function() {
-    // 저녁 버튼 클릭 시 수행할 작업
+    // 아침 버튼 클릭 시 수행할 작업
     var email = '<%=loginMember.getEmail()%>';
-    var eveningCookieName = email + 'admin_attendance_check2';
+    var eveningCookieName = email + '_attendance_check2';
     var eveningCookieValue = "eveningValue";
     var eveningExpiration = new Date();
 
     // 다음 날로 이동 + 새벽 5시 만료날짜
-    eveningExpiration.setDate(eveningExpiration.getDate() + 1);
+    eveningExpiration.setDate(eveningExpiration.getDate() + 1); 
     eveningExpiration.setHours(5, 0, 0, 0);
     var eveningExpirationString = eveningExpiration.toUTCString();
     document.cookie = eveningCookieName + "=" + encodeURIComponent(eveningCookieValue) + "; expires=" + eveningExpirationString + "; path=/";
     
-    self.close();
+    // 버튼 누른 시간 보내기
+	var now = new Date();
+    var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    
+    $('#oo').submit();
+    
+    
 });
 </script>
-
 </body>
 </html>
