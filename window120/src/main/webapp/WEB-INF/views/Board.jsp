@@ -66,14 +66,6 @@ button img {
    
 
 <div class="window" style="height: 730px; width: 1300px;">
-<!--   <div class="title-bar" style="height: 20px;">
-    <div class="title-bar-text" style="font-size:20px">게시판</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close" onclick="window.location.href='goMain'"></button>
-    </div>
-  </div> -->
 
 <div class="window-body" style="height:80%">
 <button style="width:260px; height:100px; font-size:25px; margin-top:31px;">
@@ -83,14 +75,14 @@ button img {
     <img src="resources/assets/images/logo.png" style="width:70px; height:60px; margin-left: 20px;">
 </button>
 <br>
-<button style="width:260px; height:60px; font-size:23px; margin-top:160px;">
+<button style="width:260px; height:60px; font-size:23px; margin-top:160px;" onclick="window.location.href='goTeamMain'">
 <img alt="" src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png">
-<p>채팅방<p>
+<p>팀원모집<p>
 </button>
 <br>
 <button style="width:260px; height:60px; font-size:23px; margin-top:210px;" >
 <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
-<p>진행중인 이벤트<p>
+<p>여기는 뭐하지<p>
 </button>
 <br>
 <button disabled style="width:260px; height:380px;margin-top:260px;">
