@@ -86,9 +86,10 @@ th, td {
 							<th>이름</th>
 							<th>전화번호</th>
 							<th>구분</th>
-							<th>상점</th>
 							<th>입실</th>
 							<th>퇴실</th>
+							<th>상점</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -110,9 +111,29 @@ th, td {
 					                        </c:when>
 					                    </c:choose>
 					                </td>
+					                <c:forEach items="${att_list1 }" var="att1">
+					                <c:choose>
+					                	<c:when test="${[저장된 날짜 시간빼고]   eq  [오늘날짜 시간빼고] && m.name eq att1.name }">
+					                		<td>${att1.intime 에서 날짜빼고}</td>
+					                	</c:when>
+					                	<c:otherwise>
+					                		<td>입실X</td>
+					                	</c:otherwise>
+					                </c:choose>
+					                </c:forEach>
+					                
+					              	<c:forEach items="${att_list2 }" var="att2">
+					                <c:choose>
+					                	<c:when test="${[저장된 날짜 시간빼고]   eq  [오늘날짜 시간빼고] && m.name eq att2.name }">
+					                		<td>${att2.intime 에서 날짜빼고}</td>
+					                	</c:when>
+					                	<c:otherwise>
+					                		<td>퇴실X</td>
+					                	</c:otherwise>
+					                </c:choose>
+					                </c:forEach>
+					                
 					                <td>${m.point}</td>
-					                <td>${emailAttendanceCheck1}</td>
-					                <td>${emailAttendanceCheck2}</td>
 					            </tr>
 					        </c:if>
 					    </c:forEach>

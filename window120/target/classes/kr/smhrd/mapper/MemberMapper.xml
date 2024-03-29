@@ -37,5 +37,13 @@
 	<insert id="outtime" parameterType="kr.smhrd.entity.Attendance">
 		insert into Attendance2(name, out_time) values (#{name},Now())
 	</insert>
+	
+	<select id="selectAtt1" resultType="kr.smhrd.entity.Attendance">
+		select * from Attendance
+	</select>
+	
+	<select id="selectAtt2" resultType="kr.smhrd.entity.Attendance">
+		select * from Attendance2
+	</select>
 
 </mapper>

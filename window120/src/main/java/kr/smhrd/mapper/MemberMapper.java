@@ -40,6 +40,10 @@ public interface MemberMapper {
 	public void intime(Attendance att);
 
 	public void outtime(Attendance att);
+
+	public List<Attendance> selectAtt1();
+
+	public List<Attendance> selectAtt2();
 	
 	
 }

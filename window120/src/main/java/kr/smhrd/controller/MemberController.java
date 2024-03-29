@@ -100,9 +100,14 @@ public class MemberController {
 	
 	// 회원정보 페이지로 이동 + 전체회원정보 가져오기
 	@RequestMapping("/goUserList")
-	public String goShowMember(Model model) {
+	public String goShowMember(Model model, HttpSession session) {
 		List<Member> list = memberMapper.goShowMember();
+		List<Attendance> att_list1 = memberMapper.selectAtt1();
+		List<Attendance> att_list2 = memberMapper.selectAtt2();
 		model.addAttribute("list", list);
+		model.addAttribute("att_list1", att_list1);
+		model.addAttribute("att_list2", att_list2);
+		
 		return "ShowUser";
 	}
 	
