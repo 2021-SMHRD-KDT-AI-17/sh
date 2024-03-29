@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://unpkg.com/98.css"> <!-- 스타일시트 경로 수정 -->
 <title>탭 목록</title>
 <style>
-  .tab-content {
+ .tab-content {
     display: none;
   }
 
