@@ -94,9 +94,9 @@
     
     $.ajax({
         url : 'morningPopup',
-        data : {"time":time},
+        data : {'time':time},
         type : 'get',
-        success : function(){
+        success : function(data){
         	
         		alert("가져옴");
 
