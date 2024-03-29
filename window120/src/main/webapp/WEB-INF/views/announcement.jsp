@@ -103,39 +103,40 @@
             <table class="interactive" style="width:100%;">
                 <thead >
                     <tr>
-                        <th colspan="2" style="width:100%; font-size:30px; text-align: center;">Event🎀</th>
+                        <th colspan="4" style="width:100%; font-size:30px; text-align: center;">Event🎀</th>
                     </tr>
                 </thead>
                 <tbody style="font-size:30px">
                     <tr>
-                        <td style="height:100px; width:50%; padding:10px;">
-                            <button style="width:100%; height:100%; padding:10px;">
+                        <td style="height:150px; width:50%; padding:10px;">
+                            <button style="width:100%; height:100%; padding:5px;">
                                 <img src="resources/assets/images/smhrd3.png" style="width:100%; height: 60%">
                                 <p style="font-size:15px; text-align: center;">지인추천 EVENT!</p>
                                 <p style="font-size:13px; text-align: center;">자신의 주변에 비지원자중 스마트인재개발원을</p>
                                 <p style="font-size:13px; text-align: center;"> 추천하여 1명당 20만원을 받아가세요!</p>
                             </button>
                         </td>
-                        <td style="height:100px; width:50%; padding:10px;">
-                            <button style="width:100%; height:100%; padding:10px;">
+                        
+                        <td style="height:150px; width:50%; padding:10px;">
+                            <button style="width:100%; height:100%; padding:5px;">
+                                <img src="resources/assets/images/smhrd3.png" style="width:100%; height: 60%">
+                                <p style="font-size:15px; text-align: center;">커피쿠폰 EVENT!</p>
+                                <p style="font-size:13px; text-align: center;">강의 시간에 열심히 질문 및 대답하고</p>
+                                <p style="font-size:13px; text-align: center;">강사님들에게 커피쿠폰 받아가세요!</p>
+                            </button>
+                        </td>
+                    
+                        <td style="height:150px; width:50%; padding:10px;">
+                            <button style="width:100%; height:100%; padding:5px;">
                                 <img src="resources/assets/images/smhrd3.png" style="width:100%; height: 60%">
                                 <p style="font-size:15px; text-align: center;">지인추천 EVENT!</p>
                                 <p style="font-size:13px; text-align: center;">자신의 주변에 비지원자중 스마트인재개발원을</p>
                                 <p style="font-size:13px; text-align: center;"> 추천하여 1명당 20만원을 받아가세요!</p>
                             </button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td style="height:100px; width:50%; padding:10px;">
-                            <button style="width:100%; height:100%; padding:10px;">
-                                <img src="resources/assets/images/smhrd3.png" style="width:100%; height: 60%">
-                                <p style="font-size:15px; text-align: center;">지인추천 EVENT!</p>
-                                <p style="font-size:13px; text-align: center;">자신의 주변에 비지원자중 스마트인재개발원을</p>
-                                <p style="font-size:13px; text-align: center;"> 추천하여 1명당 20만원을 받아가세요!</p>
-                            </button>
-                        </td>
-                        <td style="height:100px; width:50%; padding:10px;">
-                            <button style="width:100%; height:100%; padding:10px;">
+                       
+                        <td style="height:150px; width:50%; padding:10px;">
+                            <button style="width:100%; height:100%; padding:5px;">
                                 <img src="resources/assets/images/smhrd3.png" style="width:100%; height: 60%">
                                 <p style="font-size:15px; text-align: center;">지인추천 EVENT!</p>
                                 <p style="font-size:13px; text-align: center;">자신의 주변에 비지원자중 스마트인재개발원을</p>
@@ -154,21 +155,22 @@
             <table class="interactive">
                 <thead>
                     <tr>
-                        <th style="width: 7%; font-size:30px">번호</th>
-                        <th style="width: 60%; font-size:30px">제목</th>
-                        <th style="width: 20%; font-size:30px">작성자</th>
-                        <th style="width: 15%; font-size:30px">작성일</th>
+                        <th style="width: 7%; font-size:30px">지도 정보</th>
                     </tr>
                 </thead>
                 <tbody style="font-size:30px">
-					
+					<tr>
+					<td>
+					<div id="map" style="width:100%;height:500px;"></div>
+					</td>
+					</tr>
 					
 				</tbody>
             </table>
-            <img alt="" src="resources/assets/images/smhrd1.png" style="position: relative; top:330px; width: 100%;">
         </div>
     </div>
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // announce-tab 탭의 aria-selected 속성을 true로 변경하고 컨텐츠를 활성화
@@ -200,8 +202,18 @@ function handleTabClick(tabId) {
     var selectedTabContent = document.getElementById(tabId);
     selectedTabContent.classList.add('active');
 }
-
 </script>
+<!-- -----카카오 지도 api------ -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=90892c4f96668d21dce7786d5b129583"></script>
+<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(35.1497911, 126.9199378),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
 	<script src="resources/assets/js/jquery-3.7.1.min.js"></script>
 </body>
 </html>
