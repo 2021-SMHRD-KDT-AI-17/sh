@@ -111,27 +111,26 @@ th, td {
 					                        </c:when>
 					                    </c:choose>
 					                </td>
+					                <td>
 					                <c:forEach items="${att_list1 }" var="att1">
 					                <c:choose>
 					                	<c:when test="${att1.intime [에서 시간빼고]   eq  [오늘날짜 시간빼고] and m.name eq att1.name }">
-					                		<td>${att1.intime 에서 날짜빼고}</td>
+					                		${att1.intime 에서 날짜빼고}
 					                	</c:when>
-					                	<c:otherwise>
-					                		<td>입실X</td>
-					                	</c:otherwise>
+					                	<c:otherwise></c:otherwise>
 					                </c:choose>
 					                </c:forEach>
-					                
-					              	<c:forEach items="${att_list2 }" var="att2">
+					                </td>
+					              	<td>
+					                <c:forEach items="${att_list2 }" var="att2">
 					                <c:choose>
 					                	<c:when test="${att2.intime [에서 시간빼고]   eq  [오늘날짜 시간빼고] and m.name eq att2.name }">
-					                		<td>${att2.intime 에서 날짜빼고}</td>
+					                		${att2.intime 에서 날짜빼고}
 					                	</c:when>
-					                	<c:otherwise>
-					                		<td>퇴실X</td>
-					                	</c:otherwise>
+					                	<c:otherwise></c:otherwise>
 					                </c:choose>
 					                </c:forEach>
+					                </td>
 					                
 					                <td>${m.point}</td>
 					            </tr>
