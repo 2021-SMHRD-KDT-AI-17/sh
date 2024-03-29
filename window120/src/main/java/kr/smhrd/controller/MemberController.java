@@ -170,9 +170,14 @@ public class MemberController {
 		
 		// 아침 팝업 시간데이터
 		@RequestMapping("/morningPopup")
-		public String morningPopup(@RequestParam("time") String time) {
+		public int morningPopup(@RequestParam("time") String time) {
+			System.out.println(time);
+			if(time != null) {
+				return 1;
+			}else {
+				return 2;
+			}
 			
-			return time;
 		}
 		
 		// 저녁 팝업 시간데이터

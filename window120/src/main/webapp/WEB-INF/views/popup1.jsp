@@ -64,9 +64,9 @@
 			</div>
 			<h1 id="qrtext">아 맞다 큐알!</h1>
 
-			<form action="" method="post">
+			<form action="" method="post" id="sysy0514">
 				<input type="hidden" value=${data }>
-				<button type="submit" id="morningBtn" name="data">아침</button>
+				<button id="morningBtn" name="data">아침</button>
 			</form>
 		</div>
 	</div>
@@ -89,24 +89,36 @@
     // 버튼 누른 시간 보내기
 	var now = new Date();
     var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    
+    
+    
     $.ajax({
         url : 'morningPopup',
         data : {"time":time},
         type : 'get',
-        success : function(data){
-        	if(data != null){
+        success : function(){
+        	
         		alert("가져옴");
-        	}else{
-        		alert("null")
-        	}
+
         },
         error : function(){
             alert("에러")
+            
         }
     })
     
+    $('#sysy0514').submit();
+    
     self.close();
+    
 });
 </script>
+  	<script src="resources/assets/js/jquery.min.js"></script>
+	<script src="resources/assets/js/jquery.scrolly.min.js"></script>
+	<script src="resources/assets/js/jquery.scrollex.min.js"></script>
+	<script src="resources/assets/js/skel.min.js"></script>
+	<script src="resources/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="resources/assets/js/main.js"></script>
 </body>
 </html>
