@@ -780,90 +780,81 @@
 	        });
         </script>
 
-    <script>
-    	// 아침 버튼 클릭 이벤트 처리
-    	document.getElementById("morningBtn").addEventListener("click", function() {
-    		// 쿠키이름, 값, 만료날짜 설정
-    		var email = '<%=loginMember.getEmail()%>';
-    		var morningCookieName = email + '_attendance_check1';
-    	    var morningCookieValue = "morningValue";
-    	    var morningExpiration = new Date();
-
-    	    // 다음 날로 이동 + 새벽 5시 만료날짜
-    	    morningExpiration.setDate(morningExpiration.getDate() + 1); 
-    	    morningExpiration.setHours(5, 0, 0, 0);
-    	    var morningExpirationString = morningExpiration.toUTCString();
-    	    document.cookie = morningCookieName + "=" + encodeURIComponent(morningCookieValue) + "; expires=" + morningExpirationString + "; path=/";
-    	});
-    	
-    	// 저녁 버튼 클릭 이벤트 처리
-    	document.getElementById("eveningBtn").addEventListener("click", function() {
-    		// 쿠키이름, 값, 만료날짜 설정
-    		var email = '<%=loginMember.getEmail()%>';
-    		var eveningCookieName = email + '_attendance_check2';
-    	    var eveningCookieValue = "eveningValue";
-    	    var eveningExpiration = new Date();
-
-    	    // 다음 날로 이동 + 새벽 5시 만료날짜
-    	    eveningExpiration.setDate(eveningExpiration.getDate() + 1);
-    	    eveningExpiration.setHours(5, 0, 0, 0);
-    	    var eveningExpirationString = eveningExpiration.toUTCString();
-    	    document.cookie = eveningCookieName + "=" + encodeURIComponent(eveningCookieValue) + "; expires=" + eveningExpirationString + "; path=/";
-    	});
+    <!-- 팝업창 -->
+       <script>
+	    function openPopup() { // 1
+	        checkAttendanceCookie();
+	        scheduleExitPopup();
+	    }
         
-    	// getCookie 함수
-    	function getCookie(cookieName) {
-    	    // 쿠키 이름에 해당하는 쿠키를 찾기 위해 정규식을 사용
-    	    var name = cookieName + "=";
-    	    var decodedCookie = decodeURIComponent(document.cookie);
-    	    var cookieArray = decodedCookie.split(';');
-    	    
-    	    // 모든 쿠키를 반복하면서 쿠키 이름에 해당하는 쿠키를 찾기
-    	    for (var i = 0; i < cookieArray.length; i++) {
-    	        var cookie = cookieArray[i];
-    	        while (cookie.charAt(0) == ' ') {
-    	            cookie = cookie.substring(1);
-    	        }
-    	        // 찾은 쿠키가 요청한 쿠키인지 확인
-    	        if (cookie.indexOf(name) == 0) {
-    	            // 요청한 쿠키의 값(value)만을 추출 반환
-    	            return cookie.substring(name.length, cookie.length);
-    	        }
-    	    }
-    	    // 요청한 이름의 쿠키가 없으면 null을 반환
-    	    return null;
-    	}
-
-    	
-     	// 팝업 function
-        function QRPopup1() {
-            var popup1 = document.getElementById('popup1');
-            popup1.style.display = 'block';
+        // getCookie 함수 // 2
+        function getCookie(cookieName) {
+            // 쿠키 이름에 해당하는 쿠키를 찾기 위해 정규식을 사용
+            var name = cookieName + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookieArray = decodedCookie.split(';');
+            
+            // 모든 쿠키를 반복하면서 쿠키 이름에 해당하는 쿠키를 찾기
+            for (var i = 0; i < cookieArray.length; i++) {
+                var cookie = cookieArray[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                // 찾은 쿠키가 요청한 쿠키인지 확인
+                if (cookie.indexOf(name) == 0) {
+                    // 요청한 쿠키의 값(value)만을 추출 반환
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            // 요청한 이름의 쿠키가 없으면 null을 반환
+            return null;
         }
-        function QRPopup2() {
-            var popup2 = document.getElementById('popup2');
-            popup2.style.display = 'block';
+
+        // 팝업 function
+        function openPopup1() { // 3
+        	// 팝업 창의 너비
+            var popupWidth = 500;
+            // 팝업 창의 높이
+            var popupHeight = 300;
+            // 팝업 창을 가운데 정렬하기 위한 좌표 계산
+            var left = (screen.width - popupWidth) / 2;
+            var top = (screen.height - popupHeight) / 2;
+            // 팝업 창 열기
+            var popup1 = window.open('goPopup1', 'popup1', 'width=' + popupWidth + ',height=' + popupHeight + ',left=' + left + ',top=' + top);
         }
         
-		// 입실 체크를 수행하는 함수
-        function checkAttendanceCookie() {
+        function openPopup2() { // 4
+        	// 팝업 창의 너비
+            var popupWidth = 500;
+            // 팝업 창의 높이
+            var popupHeight = 300;
+            // 팝업 창을 가운데 정렬하기 위한 좌표 계산
+            var left = (screen.width - popupWidth) / 2;
+            var top = (screen.height - popupHeight) / 2;
+            // 팝업 창 열기
+            var popup2 = window.open('goPopup2', 'popup2', 'width=' + popupWidth + ',height=' + popupHeight + ',left=' + left + ',top=' + top);
+        }
+        
+        // 입실 체크를 수행하는 함수
+        function checkAttendanceCookie() { //5
             // 쿠키 가져오기
-            var attendanceValue = getCookie(<%=loginMember.getEmail()%>+ '_attendance_check1');
-         	// 이미 출석한 경우
+            var email = '<%=loginMember.getEmail()%>';
+            var attendanceValue = getCookie(email + '_attendance_check1');
+            // 이미 출석한 경우
             if (attendanceValue) {
-                console.log("오늘 이미 입실하셨습니다.");
+                alert('오늘 이미 입실하셨습니다.')
             } 
-         	// 출석하지 않은 경우 팝업 (로그인 시 최초 팝업)
+            // 출석하지 않은 경우 팝업 (로그인 시 최초 팝업)
             else {
-            	QRPopup1();
+                openPopup1();
             }
         }
 
-	    
         // 퇴실 알림 예약 함수
-        function ExitPopup() {
-        	// 쿠키 가져오기
-            var attendanceValue = getCookie(<%=loginMember.getEmail()%>+ '_attendance_check2');
+        function scheduleExitPopup() { //6
+            // 쿠키 가져오기
+            var email = '<%=loginMember.getEmail()%>';
+            var attendanceValue = getCookie(email + '_attendance_check2');
             // 원하는 시간 설정
             var scheduledTime = new Date();
             scheduledTime.setHours(17, 30, 0, 0); // 시, 분, 초, 밀리초
@@ -871,33 +862,22 @@
             var currentTime = new Date();
             // 현재 시간이 원하는 시간과 같거나 크면 퇴실 알림 표시
             if (currentTime.getTime() >= scheduledTime.getTime() && !attendanceValue) {
-            	QRPopup2(); // 시간되면 팝업
+                openPopup2(); // 시간되면 팝업
             } else if(currentTime.getTime() < scheduledTime.getTime()) {
                 // 원하는 시간이 아직 도달하지 않았으면, 일정 시간 후 다시 체크
                 var delay = scheduledTime - currentTime;
-                setTimeout(ExitPopup, delay);
+                setTimeout(scheduleExitPopup, delay);
             } else if(attendanceValue){
-            	console.log("오늘 이미 퇴실하셨습니다.");
+                alert('오늘 이미 퇴실하셨습니다.')
             }
         }
 
-    	 // 알림창을 숨기는 함수
-        function hidePopup1() {
-            var popup1 = document.getElementById('popup1');
-            popup1.style.display = 'none';
-        }
-    	 // 알림창을 숨기는 함수
-        function hidePopup2() {
-            var popup2 = document.getElementById('popup2');
-            popup2.style.display = 'none';
-        }
-     	
-    	 
-     	// 입실팝업
-        checkAttendanceCookie();
-        // 퇴실 팝업
-        ExitPopup();
-    </script>
+       
+    
+</script>
+    
+    
+    
 
 
 	<script src="resources/assets/js/jquery.min.js"></script>
