@@ -528,7 +528,7 @@
 <!-- ============================================================================================================================================================================= -->   
 
       <!-- 우측 하단 현재시각 -->
-      <button onclick="location.href='goTeamMain'"></button>
+      <a href="goTeamMain">버튼</a>
         <div id="time-options"></div>
            <script>
                var Target = document.getElementById("time-options");
