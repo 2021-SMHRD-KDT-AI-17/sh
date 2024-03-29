@@ -26,4 +26,5 @@ public class Member {
 	private String tel;
 	private String birthday;
 	private int point;
+	private int team_number;
 }
