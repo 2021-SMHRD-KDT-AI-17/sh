@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<table>
 		<tr>
-			<td>팀원 이름</td>
-			<td>팀원 전화번호</td>
-			<td>팀원 이메일</td>
+			<td>이름</td>
+			<td>전화번호</td>
+			<td>이메일</td>
 		</tr>
-			<c:forEach items="${teamU_list }" var="tu" begin="0" end="${t_size }" step="1" varStatus="s">
-                <tr>
-                   <td>${tu.name }</td>
-                   <td>${tu.tel }</td>
-                   <td>${tu.email }</td>
-                </tr>
-             </c:forEach>
+		<c:forEach items="${teamU_list }" var="list" varStatus="s">
+               <tr>
+                  <td>${list.name }</td>
+                  <td>${list.tel }</td>
+                  <td>${list.email }</td>
+               </tr>
+        </c:forEach>
 	</table>
 	
 	<table>
@@ -36,7 +38,12 @@
 			<td>${team.team_URL }</td>
 		</tr>
 	</table>
+	
+	<c:if test="${loginMember.team_number eq team.team_number}">
 	<button onclick="location.href='goTeamUpdate?team_number=${team.team_number}'">정보수정</button>
+	</c:if>
+	<button onclick="location.href='goTeamMain'">뒤로가기</button>
+
 
 </body>
 </html>

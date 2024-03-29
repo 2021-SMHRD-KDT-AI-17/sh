@@ -49,7 +49,7 @@ public class TeamController {
 		teamMapper.teamMake(team);
 		
 		
-		return "rediret:/goTeamMain";
+		return "redirect:/goTeamMain";
 	}
 	
 	// 팀 Detail 이동
@@ -58,8 +58,8 @@ public class TeamController {
 		Team team = teamMapper.selectTeamDetail(team_number);
 		List<Member> teamU_list = teamMapper.selectTeamMember(team_number);
 		
-		model.addAttribute("teamU_list", teamU_list);
 		model.addAttribute("team", team);
+		model.addAttribute("teamU_list", teamU_list);
 		
 		return "TeamDetail";
 	}
@@ -69,10 +69,11 @@ public class TeamController {
 	public String participateTeam(@RequestParam("team_number") int team_number, HttpSession session) {
 		
 		Member member = (Member) session.getAttribute("loginMember");
+		member.toString();
 		member.setTeam_number(team_number);
 		teamMapper.participateTeam(member);
 		
-		return "rediret:/goTeamMain";
+		return "redirect:/goTeamMain";
 	}
 	
 	// 팀정보 수정하러 가기
@@ -96,7 +97,7 @@ public class TeamController {
 		
 		teamMapper.updateTeam(team);
 		
-		return "rediret:/goTeamMain";
+		return "redirect:/goTeamMain";
 	}
 
 }

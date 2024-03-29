@@ -20,7 +20,7 @@
                      <tr>
                         <td>${s.count }</td>
                         <td>${t.team_name }</td>
-                        <td><button onclick="location.href='participateTeam?team_number=${t.team_number}'"></button></td>
+                        <td><button onclick="location.href='participateTeam?team_number=${t.team_number}'">팀참가</button></td>
                         <td><button onclick="location.href='goTeamDetail?team_number=${t.team_number}'">입장</button></td>
                      </tr>
                   </c:forEach>
