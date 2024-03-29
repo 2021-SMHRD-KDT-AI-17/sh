@@ -66,7 +66,7 @@
 
 			<form action="morningPopup" method="post">
 				<input type="hidden" value="입실" name="a">
-				<input type="hidden" value="<%=loginMember.getName() %>" name="b">
+				<input type="hidden" value="<%=loginMember.getName() %>" name="name">
 				<button id="morningBtn" name="data" id="oo">아침</button>
 			</form>
 		</div>
