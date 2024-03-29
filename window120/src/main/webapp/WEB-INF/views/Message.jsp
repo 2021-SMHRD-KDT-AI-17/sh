@@ -11,6 +11,7 @@
 	<table>
 		<tr>
 			<td>보낸사람</td>
+			<td>카테고리</td>
 			<td>제목</td>
 			<td>보낸시간</td>
 		</tr>
@@ -18,6 +19,7 @@
 		<c:forEach items="${mes_list }" var="list" varStatus="s">
             <tr>
                <td>${list.user_id }</td>
+               <td>${list.catagory }</td>
                <td><a href="goMessageDetail?message_idx=${list.message_idx }">${list.message_title }</a></td>
                <td>${list.message_dt }</td>
             </tr>

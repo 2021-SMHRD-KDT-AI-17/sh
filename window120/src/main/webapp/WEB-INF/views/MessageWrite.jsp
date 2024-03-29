@@ -12,12 +12,12 @@
 		<table>
 			<tr>
 				<td>작성자</td>
-				<td><input type="text" readlonly value="${loginMember.id }" name="user_id"></td>
+				<td><input type="text" readlonly value="${loginMember.id }" readonly name="user_id"></td>
 			</tr>
 			<tr>
 				<td>카테고리</td>
 				<td>
-				<input type="radio" name="catagory" value="건의사항">건의사항
+				<input type="radio" name="catagory" value="건의사항" checked="checked">건의사항
 				<input type="radio" name="catagory" value="권한요청">권한요청
 				</td>
 			</tr>
