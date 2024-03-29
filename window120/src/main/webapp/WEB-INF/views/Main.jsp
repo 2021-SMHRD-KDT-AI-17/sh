@@ -531,6 +531,7 @@
       <a href="goTeamMain">버튼</a>
        <a href="goSendAdminMessage">메세지작성</a>
         <a href="goMessage">메세지보기</a>
+        <a href="goInsite">인사이트</a>
         <div id="time-options"></div>
            <script>
                var Target = document.getElementById("time-options");
