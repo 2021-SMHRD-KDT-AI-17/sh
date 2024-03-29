@@ -27,7 +27,7 @@
 	<table>
 		<tr>
 			<td>양식 다운로드</td>
-			<td></td>
+			<td><a href="resources/image/팀할일.xlsx" download>팀 할일 템플릿</td>
 		</tr>
 		<tr>
 			<td>GitHub 주소</td>

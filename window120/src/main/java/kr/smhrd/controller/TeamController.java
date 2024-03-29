@@ -69,7 +69,6 @@ public class TeamController {
 	public String participateTeam(@RequestParam("team_number") int team_number, HttpSession session) {
 		
 		Member member = (Member) session.getAttribute("loginMember");
-		member.toString();
 		member.setTeam_number(team_number);
 		teamMapper.participateTeam(member);
 		
