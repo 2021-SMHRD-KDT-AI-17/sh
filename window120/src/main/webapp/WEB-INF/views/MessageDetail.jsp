@@ -13,6 +13,10 @@
 			<td>${message.user_id }</td>
 		</tr>
 		<tr>
+			<td>카테고리</td>
+			<td>${message.catagory }</td>
+		</tr>
+		<tr>
 			<td>제목</td>
 			<td>${message.message_title }</td>
 		</tr>
