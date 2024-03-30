@@ -6,6 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://unpkg.com/98.css">
+<style>
+  .window {
+   width: 300px;
+   height: auto;
+   position: fixed;
+   top: 45%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.window-body {
+    position: relative; /* 부모 컨테이너를 상대적으로 설정합니다. */
+
+}
+
+.window-body > * {
+    position: absolute; /* 자식 요소를 절대적으로 설정합니다. */
+    /* 위치를 제어하기 위해 위, 왼쪽, 오른쪽 또는 아래와 같은 다른 위치 속성을 지정할 수도 있습니다. */
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
