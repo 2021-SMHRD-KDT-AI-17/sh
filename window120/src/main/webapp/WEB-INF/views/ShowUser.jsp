@@ -3,6 +3,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+
+
+
 <!-- 1.request영역에 저장된 정보를 가져오시오. -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -62,12 +71,20 @@ th, td {
 <style>
 </style>
 <body style="text-align: center;" bgcolor="#008080">
-
+	
+	<%
+	  // 현재 날짜를 가져옵니다.
+	  Date now = new Date();
+	  // 현재 날짜를 yyyy-MM-dd 형식으로 포맷합니다.
+	  String todayDate = new SimpleDateFormat("yyyy-MM-dd").format(now);
+	%>
 	<%
 	List<Member> list = (List<Member>) request.getAttribute("list");
 	String emailAttendanceCheck1 = (String) request.getAttribute("emailAttendanceCheck1");
     String emailAttendanceCheck2 = (String) request.getAttribute("emailAttendanceCheck2");
 	%>
+	<c:set var="todayDate" value="<%= todayDate %>" />
+	
 	<div class="window" style="width: 386px">
 		<div class="title-bar">
 			<div class="title-bar-text">학생 리스트</div>
@@ -111,11 +128,13 @@ th, td {
 					                        </c:when>
 					                    </c:choose>
 					                </td>
+					                
+					               
 					                <td>
 					                <c:forEach items="${att_list1 }" var="att1">
 					                <c:choose>
-					                	<c:when test="${att1.intime [에서 시간빼고]   eq  [오늘날짜 시간빼고] and m.name eq att1.name }">
-					                		${att1.intime 에서 날짜빼고}
+					                	<c:when test='${fn:split(att1.in_time," ")[0] eq  todayDate && m.name eq att1.name }'>
+					                		${fn:split(att1.in_time," ")[1] }
 					                	</c:when>
 					                	<c:otherwise></c:otherwise>
 					                </c:choose>
@@ -124,8 +143,8 @@ th, td {
 					              	<td>
 					                <c:forEach items="${att_list2 }" var="att2">
 					                <c:choose>
-					                	<c:when test="${att2.intime [에서 시간빼고]   eq  [오늘날짜 시간빼고] and m.name eq att2.name }">
-					                		${att2.intime 에서 날짜빼고}
+					                	<c:when test='${fn:split(att2.out_time," ")[0] eq  todayDate && m.name eq att2.name }'>
+					                		${fn:split(att2.out_time," ")[1]}
 					                	</c:when>
 					                	<c:otherwise></c:otherwise>
 					                </c:choose>
