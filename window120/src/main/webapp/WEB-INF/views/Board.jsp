@@ -80,10 +80,17 @@ button img {
 <p>팀원모집<p>
 </button>
 <br>
-<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" >
+<% if (loginMember.getRank_num() != 2) { %>
+<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goSendAdminMessage'" >
 <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
-<p>여기는 뭐하지<p>
+<p>건의 및 권한요청<p>
 </button>
+<%}else { %>
+<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goMessage'" >
+<img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
+<p>건의사항 확인<p>
+</button>
+<%} %>
 <br>
 <button disabled style="width:260px; height:380px;margin-top:260px;">
     <img src="resources/assets/images/smhrd2.png" style="width:237px; height:360px;">

@@ -83,14 +83,14 @@ button img {
     <img src="resources/assets/images/logo.png" style="width:70px; height:60px; margin-left: 20px;">
 </button>
 <br>
-<button style="width:260px; height:60px; font-size:23px; margin-top:160px;">
+<button style="width:260px; height:60px; font-size:23px; margin-top:160px;" onclick="window.location.href='goTeamMain'">
 <img alt="" src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png">
-<p>채팅방<p>
+<p>팀원모집<p>
 </button>
 <br>
-<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" >
+<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goSendAdminMessage'">
 <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
-<p>진행중인 이벤트<p>
+<p>건의 및 권한요청<p>
 </button>
 <br>
 <button disabled style="width:260px; height:380px;margin-top:260px;">

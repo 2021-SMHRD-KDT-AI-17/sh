@@ -46,13 +46,18 @@
 				<tr>
 					<td colspan="2">
 					<div style="text-align: right; padding: 8px; height: 1%;">
-					<input type="reset" value="초기화"> <input type="submit" value="작성하기"></td>
+					<button type="button" style="font-size:15px;" onclick="goBack()">뒤로가기</button><input style="font-size:15px;" type="submit" value="작성하기"></td>
 					</div>
 				</tr>
 				</tbody>
 			</table>
 		</form>
 	</div>
+	<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 	<!-- Scripts -->
 			<script src="resources/assets/js/jquery.min.js"></script>
 			<script src="resources/assets/js/jquery.scrolly.min.js"></script>
