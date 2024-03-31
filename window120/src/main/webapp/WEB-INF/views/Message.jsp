@@ -5,16 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://unpkg.com/98.css">
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
-		<tr>
-			<td>보낸사람</td>
-			<td>카테고리</td>
-			<td>제목</td>
-			<td>보낸시간</td>
-		</tr>
+<div class="sunken-panel" id="board" style="height: 100%; width: 100%;">
+<table class="interactive" id="list" style="height: 100%; width: 100%;">
+			<thead style="font-size: 30px;">
+				<tr>
+					<td style="width: 20%;">보낸사람</td>
+					<td style="width: 20%;">카테고리</td>
+					<td style="width: 20%;">제목</td>
+					<td style="width: 20%;">보낸시간</td>
+				</tr>
+			</thead>
+			<tbody style="width: 100%; height: 500px; font-size: 20px;">
 		
 		<c:forEach items="${mes_list }" var="list" varStatus="s">
             <tr>
@@ -25,5 +30,15 @@
             </tr>
         </c:forEach>
 	</table>
-</body>
-</html>
+	</div>
+	<div style="text-align: right; padding: 8px; height: 1%;">
+		<button type="button" style="font-size: 15px;" onclick="goBack()">뒤로가기</button>
+	</div>
+
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+		</body>
+		</html>
+	

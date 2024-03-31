@@ -62,11 +62,11 @@ create table user_info(
 	primary key(id)
 );
 
-insert into user_info values(0,'admin', '1234', '박상윤', 'sysy0514@naver.com','010-5026-1135','1995-05-14');
+insert into user_info values(2,'admin', '1234', '박상윤', 'sysy0514@naver.com','010-5026-1135','1995-05-14');
 
 select * from user_info;
 
-update user_info set rank_num=3 where id='sysy';
+update user_info set rank_num=2 where id='admin';
 
 ALTER TABLE user_info ADD COLUMN point int not null;
 
