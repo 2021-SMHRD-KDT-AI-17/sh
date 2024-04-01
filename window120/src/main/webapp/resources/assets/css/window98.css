@@ -349,6 +349,26 @@ a.desktop-item {
     height: 753px;
     min-height: 20rem;
 }
+.window.userlist {
+    width: 67%;
+    min-width: 50%;
+    left: 10%;
+    margin-top: 0;
+    position: absolute;
+    top: 7%;
+    height: 753px;
+    min-height: 20rem;
+}
+.window.teacherlist {
+    width: 67%;
+    min-width: 50%;
+    left: 10%;
+    margin-top: 0;
+    position: absolute;
+    top: 7%;
+    height: 753px;
+    min-height: 20rem;
+}
 .window.update {
     width: 40rem;
     min-width: 40rem;
@@ -689,6 +709,8 @@ textarea:focus {
 #windows-calender-input-max:checked ~ #all-windows .calender,
 #windows-insite-input-max:checked ~ #all-windows .insite,
 #windows-board-input-max:checked ~ #all-windows .board,
+#windows-userlist-input-max:checked ~ #all-windows .userlist,
+#windows-teacherlist-input-max:checked ~ #all-windows .teacherlist,
 #windows-todoList-input-max:checked ~ #all-windows .todoList,
 #windows-update-input-max:checked ~ #all-windows .update,
 #windows-announce-input-max:checked ~ #all-windows .announce {
@@ -703,6 +725,8 @@ textarea:focus {
 #windows-calender-input:checked ~ #all-windows .calender,
 #windows-insite-input:checked ~ #all-windows .insite,
 #windows-board-input:checked ~ #all-windows .board,
+#windows-userlist-input:checked ~ #all-windows .userlist,
+#windows-teacherlist-input:checked ~ #all-windows .teacherlist,
 #windows-todoList-input:checked ~ #all-windows .todoList,
 #windows-update-input:checked ~ #all-windows .update,
 #windows-announce-input:checked ~ #all-windows .announce {
@@ -712,6 +736,8 @@ textarea:focus {
 #windows-calender-input:checked ~ #start-bar .calender-tab,
 #windows-insite-input:checked ~ #start-bar .insite-tab,
 #windows-board-input:checked ~ #start-bar .board-tab,
+#windows-userlist-input:checked ~ #start-bar .userlist-tab,
+#windows-teacherlist-input:checked ~ #start-bar .teacherlist-tab,
 #windows-todoList-input:checked ~ #start-bar .todoList-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
 #windows-announce-input:checked ~ #start-bar .announce-tab {
@@ -721,6 +747,8 @@ textarea:focus {
 #windows-calender-input-min:checked ~ #all-windows .calender,
 #windows-insite-input-min:checked ~ #all-windows .insite,
 #windows-board-input-min:checked ~ #all-windows .board,
+#windows-userlist-input-min:checked ~ #all-windows .userlist,
+#windows-teacherlist-input-min:checked ~ #all-windows .teacherlist,
 #windows-todoList-input-min:checked ~ #all-windows .todoList,
 #windows-update-input-min:checked ~ #all-windows .update,
 #windows-announce-input-min:checked ~ #all-windows .announce {
@@ -730,6 +758,8 @@ textarea:focus {
 #windows-calender-input:checked ~ #start-bar .calender-tab,
 #windows-insite-input:checked ~ #start-bar .insite-tab,
 #windows-board-input:checked ~ #start-bar .board-tab,
+#windows-userlist-input:checked ~ #start-bar .userlist-tab,
+#windows-teacherlist-input:checked ~ #start-bar .teacherlist-tab,
 #windows-todoList-input:checked ~ #start-bar .todoList-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
 #windows-announce-input:checked ~ #start-bar .announce-tab {
@@ -739,6 +769,8 @@ textarea:focus {
 #windows-calender-input-min:checked ~ #start-bar .calender-tab,
 #windows-insite-input-min:checked ~ #start-bar .insite-tab,
 #windows-board-input-min:checked ~ #start-bar .board-tab,
+#windows-userlist-input-min:checked ~ #start-bar .userlist-tab,
+#windows-teacherlist-input-min:checked ~ #start-bar .teacherlisttab,
 #windows-todoList-input-min:checked ~ #start-bar .todoList-tab,
 #windows-update-input-min:checked ~ #start-bar .update-tab,
 #windows-announce-input-min:checked ~ #start-bar .announce-tab {
@@ -748,6 +780,8 @@ textarea:focus {
 #windows-calender-input-on-top:checked ~ #all-windows .calender,
 #windows-insite-input-on-top:checked ~ #all-windows .insite,
 #windows-board-input-on-top:checked ~ #all-windows .board,
+#windows-userlist-input-on-top:checked ~ #all-windows .userlist,
+#windows-teacherlist-input-on-top:checked ~ #all-windows .teacherlist,
 #windows-todoList-input-on-top:checked ~ #all-windows .todoList,
 #windows-update-input-on-top:checked ~ #all-windows .update,
 #windows-announce-input-on-top:checked ~ #all-windows .announce {
