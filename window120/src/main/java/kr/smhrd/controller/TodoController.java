@@ -4,12 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Todo;
 import kr.smhrd.mapper.TodoMapper;
 
@@ -28,14 +31,21 @@ public class TodoController {
     }
 
     @RequestMapping("/addTodoItem")
-    public String addTodoItem(@RequestParam("date") String date, @RequestParam("content") String content) {
-        Todo todo = new Todo();
-        todo.setDate(date);
-        todo.setContent(content);
-        todo.setCompleted(false); // 새로운 항목을 추가할 때 completed는 기본적으로 false로 설정
-        todoMapper.addTodoItem(todo);
-        System.out.println(todo);
-        return "redirect:/showTodoList";
+    public String addTodoItem(@RequestParam("date") String date, @RequestParam("content") String content, HttpSession session) {
+        // 세션에서 로그인 멤버 정보를 가져옴
+        Member loginMember = (Member) session.getAttribute("loginMember");
+        if (loginMember != null) {
+            Todo todo = new Todo();
+            todo.setDate(date);
+            todo.setContent(content);
+            todo.setCompleted(false);
+            // 투두 아이템 추가 시 로그인 멤버 정보를 사용
+            todo.setLoginid(loginMember.getId());
+            todoMapper.addTodoItem(todo);
+            return "redirect:/showTodoList";
+        } else {
+            return "redirect:/login"; // 로그인되어 있지 않으면 로그인 페이지로 이동
+        }
     }
 
     @RequestMapping("/updateTodoItem")

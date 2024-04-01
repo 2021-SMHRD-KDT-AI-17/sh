@@ -15,6 +15,7 @@ public class Todo {
     private String date;
     private String content;
     private boolean completed;
+    private String loginid;
     
 	public Todo() {
 	    // 기본 생성자 내용

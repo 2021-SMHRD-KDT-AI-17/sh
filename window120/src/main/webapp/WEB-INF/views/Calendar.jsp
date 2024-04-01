@@ -124,6 +124,37 @@
         </div>
       </div>
     </div>
+
+
+  <div id="calendar1"></div>
+  <dialog>
+    <div>제목 테스트</div>
+    <br>
+    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
+  </dialog>
+  
+  <!-- 부트스트랩 modal 부분 -->
+  
+<div class="modal fade" id="eventInfoModal" tabindex="-1" aria-labelledby="eventInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventInfoModalLabel"></h5>
+        <button type="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
+        <!-- 이벤트 정보가 여기에 들어갈 것입니다. -->
+        <h3><span id="eventInfoTitle"></span></h3>
+        <h5><span id="eventInfoDday"></span></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteEventBtn" data-bs-dismiss="modal">삭제</button>
+        <button type="button" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script>
 
   
@@ -155,7 +186,7 @@
         	    text: "일정 추가하기",
         	    click: function() {
         	        // admin 여부 확인
-        	        var isAdmin = /bom/.test("${loginMember.email}");
+        	        var isAdmin = /admin/.test("${loginMember.email}");
 
         	        if (isAdmin) {
         	            // 부트스트랩 모달 열기
@@ -169,7 +200,7 @@
         	    text: "저장하기",
         	    click: function() {
         	        // 관리자 여부 확인
-        	        var isAdmin = /bom/.test("${loginMember.email}");
+        	        var isAdmin = /admin/.test("${loginMember.email}");
 
 
         	        if (isAdmin) {
@@ -423,7 +454,7 @@
         },
         select: function(arg) {
         	  // 현재 로그인한 사용자가 admin 인지 확인
-        	        var isAdmin = /bom/.test("${loginMember.email}");
+        	        var isAdmin = /admin/.test("${loginMember.email}");
 
 
         	  if (isAdmin) {
@@ -507,7 +538,7 @@ eventSources: [
       calendar.render();
       
       $("#deleteEventBtn").on("click", function() {
-    	    var isAdmin = /bom/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
+    	    var isAdmin = /admin/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
 
     	    if (isAdmin) {
     	        // 확인 다이얼로그를 통해 사용자에게 삭제 여부를 물어봅니다.
@@ -554,7 +585,7 @@ eventSources: [
     });
   })();
   function deleteEvent(eventId) {
-	    var isAdmin = /bom/.test("${loginMember.email}");
+	    var isAdmin = /admin/.test("${loginMember.email}");
 
 	    if (isAdmin) {
 	        if (confirm("이벤트를 삭제하시겠습니까?")) {
@@ -574,34 +605,5 @@ eventSources: [
 	// 모달에서 삭제 버튼 클릭 시 이벤트 삭제
 
 </script>
-
-  <div id="calendar1"></div>
-  <dialog>
-    <div>제목 테스트</div>
-    <br>
-    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
-  </dialog>
-  
-  <!-- 부트스트랩 modal 부분 -->
-  
-<div class="modal fade" id="eventInfoModal" tabindex="-1" aria-labelledby="eventInfoModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eventInfoModalLabel"></h5>
-        <button type="button" data-bs-dismiss="modal" aria-label="Close">X</button>
-      </div>
-      <div class="modal-body">
-        <!-- 이벤트 정보가 여기에 들어갈 것입니다. -->
-        <h3><span id="eventInfoTitle"></span></h3>
-        <h5><span id="eventInfoDday"></span></h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="deleteEventBtn" data-bs-dismiss="modal">삭제</button>
-        <button type="button" data-bs-dismiss="modal">닫기</button>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>

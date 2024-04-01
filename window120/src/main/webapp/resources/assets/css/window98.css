@@ -310,23 +310,23 @@ a.desktop-item {
 }
 
 .window.todoList {
-    width: 25rem;
-    min-width: 25rem;
-    height: 30rem;
+    width: 500px;
+    min-width: 500px;
+    height: 600px;
     position: absolute;
     top: 7rem;
     left: 11rem;
-    min-height: 30rem;
+    min-height: 600px;
 }
 .window.calender {
-    width: 30%;
-    min-width: 30%;
-    left: 34%;
+    width: 60%;
+    min-width: 60%;
+    left: 22%;
     margin-top: 0;
     position: absolute;
-    top: 7rem;
-    height: 70%;
-    min-height: 70%;
+    top: 4rem;
+    height: 800px;
+    min-height: 800px;
     resize: both;
 }
 .window.insite {
