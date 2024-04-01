@@ -5,8 +5,8 @@
 
     <!-- 일정 추가 -->
     <insert id="addTodoItem" parameterType="kr.smhrd.entity.Todo">
-        INSERT INTO todoList (date, content, completed)
-        VALUES (#{date}, #{content}, #{completed})
+        INSERT INTO todoList (date, content, completed, loginid)
+        VALUES (#{date}, #{content}, #{completed}, #{loginid})
     </insert>
 
 <delete id="deleteTodoItem" parameterType="java.lang.Long">

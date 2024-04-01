@@ -348,9 +348,17 @@
             
 <!-- ============================================================================================================================================================================= -->   
 
+
 		<!-- 캘린더 클릭시 나오는 화면 -->
+		<style>
+  /* CSS로 iframe 숨기기 */
+  .window.calender .content.white iframe {
+    display: none;
+  }
+</style>
+
        <div class="window calender windows-box-shadow" id="ohj6">
-           <div class="header"><label for="windows-board-input-on-top"><div id="draggable6">게시판</div></label>
+           <div class="header"><label for="windows-board-input-on-top"><div id="draggable6">캘린더</div></label>
                <div class="header-buttons">
                    <label for="windows-calender-input-min" class="minimize windows-box-shadow"></label>
                    <label for="windows-calender-input-max" class="maximize windows-box-shadow"></label>
@@ -371,51 +379,51 @@
                 <input type="radio" name="documents-radio" id="secret-codes" />
                 <input type="radio" name="documents-radio" id="diary" />
                 <label class="file secret-codes" for="secret-codes">
-                    <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiBhoALTAhTzgxAAAAhUlEQVRIx+1TQQ6AIAwrxIfxtD2Nn9WDOCCKmXAQjT0MQrOmHQDsIGiuBfy2CAmxV9YiEJIgjVUIRpXwGIQK0FzDucCwg14seeuK43rIDkwsrwSOZMm0WJMDYwR7U4mX3MLcM2hEaKHzIf0OZnfwgb/wvIPhISbfwmBuCYgI2pmD30ugfSuWrXYCzH4wigAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo0NTo0OC0wNDowMGElB+4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NDU6NDgtMDQ6MDAQeL9SAAAAAElFTkSuQmCC" alt="" /></span>
-                    <span class="text">Secret_Codes.txt</span>
+                    <span class="image"><img src="resources/assets/images/calendar.png" alt="" /></span>
+                    <span class="text">반 캘린더</span>
                 </label>
                 <label class="file diary" for="diary">
-                    <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAGFBMVEUAAAAAAACAgID////AwMAAAL8AAP///wCsLlssAAAAAXRSTlMAQObYZgAAAAFiS0dEAxEMTPIAAAAHdElNRQfiBhoAOCQMIApYAAAAvUlEQVQoz22Ryw7CIBREqYl7xlb3Pj7APpQ1iaZbXcjaxBTXhCi/bx+2XBomd8PJDDcMjCUc43DWab8rpunIIi/TcbYyCkovKdltBpbPGVAtuHjJqz6GDvUOI1d9DiPqpcMt6tsEkXyjwy04NWEkhWooEMD6wUnEGuBOHidEBXACrKsNuuf/A7Wr3AekD2trB1JQe4MzUvqIK4BMeofIV0OFIzBpOYG+qmxoLNJ6DNCSow528I6s//4EXu3xB1FNX4O6vHKSAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA2LTI2VDAwOjU2OjM2LTA0OjAwEWYRaQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wNi0yNlQwMDo1NjozNi0wNDowMGA7qdUAAAAASUVORK5CYII=" alt="" /></span>
-                    <span class="text">Diary.rtf</span>
+                    <span class="image"><img src="resources/assets/images/calendar.png" alt="" /></span>
+                    <span class="text">팀 캘린더</span>
                 </label>  
            </div>
         </div>
-		 	  <script>
-		        document.addEventListener('DOMContentLoaded', function() {
-		            // X 버튼을 눌렀을 때 이벤트 설정
-		            document.querySelector('.window.documents .header .close').addEventListener('click', function() {
-		                // 두 개의 iframe을 모두 숨김
-		                document.querySelectorAll('.window.documents .content.white iframe').forEach(function(iframe) {
-		                    iframe.style.display = 'none';
-		                });
-		                // 라벨을 두 개 생성
-		                document.querySelector('.file.secret-codes').style.display = 'inline-block';
-		                document.querySelector('.file.diary').style.display = 'inline-block';
-		            });
-		
-		            // Secret Codes 이미지를 클릭했을 때 이벤트 설정
-		            document.querySelector('.file.secret-codes').addEventListener('click', function() {
-		                // 첫 번째 iframe 보이기
-		                document.querySelector('.window.documents .content.white iframe:nth-of-type(1)').style.display = 'block';
-		                // 두 번째 iframe 숨기기
-		                document.querySelector('.window.documents .content.white iframe:nth-of-type(2)').style.display = 'none';
-		                // 라벨 숨기기
-		                document.querySelector('.file.secret-codes').style.display = 'none';
-		                document.querySelector('.file.diary').style.display = 'none';
-		            });
-		
-		            // Diary 이미지를 클릭했을 때 이벤트 설정
-		            document.querySelector('.file.diary').addEventListener('click', function() {
-		                // 첫 번째 iframe 숨기기
-		                document.querySelector('.window.documents .content.white iframe:nth-of-type(1)').style.display = 'none';
-		                // 두 번째 iframe 보이기
-		                document.querySelector('.window.documents .content.white iframe:nth-of-type(2)').style.display = 'block';
-		                // 라벨 숨기기
-		                document.querySelector('.file.secret-codes').style.display = 'none';
-		                document.querySelector('.file.diary').style.display = 'none';
-		            });
-		        });
-		    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // X 버튼을 눌렀을 때 이벤트 설정
+        document.querySelector('.window.calender .header .close').addEventListener('click', function() {
+            // 두 개의 iframe을 모두 숨김
+            document.querySelectorAll('.window.calender .content.white iframe').forEach(function(iframe) {
+                iframe.style.display = 'none';
+            });
+            // 라벨을 두 개 생성
+            document.querySelector('.file.secret-codes').style.display = 'inline-block';
+            document.querySelector('.file.diary').style.display = 'inline-block';
+        });
+
+        // 반 캘린더 이미지를 클릭했을 때 이벤트 설정
+        document.querySelector('.file.secret-codes').addEventListener('click', function() {
+            // 첫 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'block';
+            // 두 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'none';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+
+        // 팀 캘린더 이미지를 클릭했을 때 이벤트 설정
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+    });
+</script>
 
 <!-- ============================================================================================================================================================================= -->  
 

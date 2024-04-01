@@ -1,3 +1,4 @@
+<%@page import="kr.smhrd.entity.Member"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -55,6 +56,9 @@ html, body {
     </style>
 </head>
 <body>
+<%
+Member loginMember = (Member)session.getAttribute("loginMember");
+%>
     <!-- HTML 코드 -->
     <div class="frame">
         <div class="center">
@@ -65,6 +69,7 @@ html, body {
                 </header>
                 <form id="todoForm" action="addTodoItem" method="post">
                     <input type="hidden" name="date" value="<%=java.time.LocalDate.now()%>" readonly>
+                    <input type="hidden" name="email" value="<%=loginMember.getEmail()%>" readonly>
                     <%-- <input type="text" name="date" value="<%=java.time.LocalDate.now()%>" readonly><br> <!-- 오늘의 날짜를 자동으로 입력 --> --%>
                     <div class="field-row-stacked" style="width: 400px">
                     <input type="text" id="todoContent" name="content">
@@ -80,34 +85,33 @@ html, body {
 					    request.setAttribute("currentDate", currentDate);
 					%>
 <h4>투두 리스트</h4>
-<div class="sunken-panel" style="height: 300px; width: 400px;">
-  <table class="interactive">
-    <thead>
+<div class="sunken-panel" style="height: 150px; width: 400px;">
+  <table style="width:100%" class="interactive">
+    <thead style="width:100%">
       <tr>
         <th>날짜</th>
         <th>내용</th>
         <th>삭제</th>
       </tr>
     </thead>
-    <tbody>
-
-    <!-- completed가 false인 항목 출력 -->
-    <c:forEach items="${t_list}" var="todo">
-		 <tr>
-		 	
-			<td>${todo.date}</td>
-			<td>
-                <label for="todo-${todo.id}">
-                    <input id="todo-${todo.id}" type="checkbox" name="completed" value="true" onchange="updateTodoItem('${todo.id}', this.checked)" ${todo.completed ? 'checked' : ''}>
-                    <label for="todo-${todo.id}"><span>${todo.content}</span></label>
-                </label>
-            </td>
-			<td><span class="deleteTodo" style="cursor: pointer; text-decoration: underline;">삭제</span></td>
-                
-
-    </c:forEach>
+        <tbody>
+            <c:forEach items="${t_list}" var="todo">
+                <%-- 현재 투두 아이템의 로그인 아이디가 현재 로그인한 멤버의 이메일과 일치하는 경우에만 출력 --%>
+                <c:if test="${todo.loginid eq loginMember.email}">
+                    <tr>
+                        <td>${todo.date}</td>
+                        <td>
+                            <label for="todo-${todo.id}">
+                                <input id="todo-${todo.id}" type="checkbox" name="completed" value="true" onchange="updateTodoItem('${todo.id}', this.checked)" ${todo.completed ? 'checked' : ''}>
+                                <label for="todo-${todo.id}"><span>${todo.content}</span></label>
+                            </label>
+                        </td>
+                        <td><span class="deleteTodo" style="cursor: pointer; text-decoration: underline;">삭제</span></td>
+                    </tr>
+                </c:if>
+            </c:forEach>
         </tbody>
-  </table>
+    </table>
 </div>
 
             </section>

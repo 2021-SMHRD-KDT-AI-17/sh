@@ -27,10 +27,6 @@
     font-size: 13px;
     color:black;
   }
-  body{
-   background-color: rgb(192, 192, 192);
-  }
-
 
   .fc-daygrid-day-number, .fc-toolbar-title,.fc-col-header-cell-cushion {
     color: black !important; /* 월과 날짜의 색상을 검정색으로 변경 */
@@ -64,8 +60,6 @@
     font-weight: bold;
     font-size: 16px; /* 원하는 크기로 조절하세요 */
   }
-
-  
 </style>
 <link href="resources/assets/css/Calendarcss.css" rel="stylesheet">
 </head>
@@ -155,7 +149,7 @@
         	    text: "일정 추가하기",
         	    click: function() {
         	        // admin 여부 확인
-        	        var isAdmin = /bom/.test("${loginMember.email}");
+        	        var isAdmin = /admin/.test("${loginMember.email}");
 
         	        if (isAdmin) {
         	            // 부트스트랩 모달 열기
@@ -169,7 +163,7 @@
         	    text: "저장하기",
         	    click: function() {
         	        // 관리자 여부 확인
-        	        var isAdmin = /bom/.test("${loginMember.email}");
+        	        var isAdmin = /admin/.test("${loginMember.email}");
 
 
         	        if (isAdmin) {
@@ -424,7 +418,7 @@
       },
       select: function(arg) {
       	  // 현재 로그인한 사용자가 admin 인지 확인
-      	        var isAdmin = /bom/.test("${loginMember.email}");
+      	        var isAdmin = /admin/.test("${loginMember.email}");
 
 
       	  if (isAdmin) {
@@ -508,7 +502,7 @@ eventSources: [
       calendar.render();
       
       $("#deleteEventBtn").on("click", function() {
-  	    var isAdmin = /bom/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
+  	    var isAdmin = /admin/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
 
   	    if (isAdmin) {
   	        // 확인 다이얼로그를 통해 사용자에게 삭제 여부를 물어봅니다.
@@ -555,7 +549,7 @@ eventSources: [
     });
   })();
   function deleteEvent(eventId) {
-	    var isAdmin = /bom/.test("${loginMember.email}");
+	    var isAdmin = /admin/.test("${loginMember.email}");
 
 	    if (isAdmin) {
 	        if (confirm("이벤트를 삭제하시겠습니까?")) {
