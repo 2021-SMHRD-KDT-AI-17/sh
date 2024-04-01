@@ -310,13 +310,13 @@ a.desktop-item {
 }
 
 .window.todoList {
-    width: 16rem;
-    min-width: 16rem;
-    height: 23rem;
+    width: 25rem;
+    min-width: 25rem;
+    height: 30rem;
     position: absolute;
     top: 7rem;
     left: 11rem;
-    min-height: 11rem;
+    min-height: 30rem;
 }
 .window.calender {
     width: 30%;
@@ -329,14 +329,14 @@ a.desktop-item {
     min-height: 70%;
     resize: both;
 }
-.window.trash {
-    width: 50%;
+.window.insite {
+    width: 67%;
     min-width: 50%;
-    left: 30%;
+    left: 10%;
     margin-top: 0;
     position: absolute;
-    top: 9rem;
-    height: 20rem;
+    top: 7%;
+    height: 753px;
     min-height: 20rem;
 }
 .window.board {
@@ -687,7 +687,7 @@ textarea:focus {
 
 #windows-ie-input-max:checked ~ #all-windows .ie,
 #windows-calender-input-max:checked ~ #all-windows .calender,
-#windows-trash-input-max:checked ~ #all-windows .trash,
+#windows-insite-input-max:checked ~ #all-windows .insite,
 #windows-board-input-max:checked ~ #all-windows .board,
 #windows-todoList-input-max:checked ~ #all-windows .todoList,
 #windows-update-input-max:checked ~ #all-windows .update,
@@ -701,7 +701,7 @@ textarea:focus {
 }
 #windows-ie-input:checked ~ #all-windows .ie,
 #windows-calender-input:checked ~ #all-windows .calender,
-#windows-trash-input:checked ~ #all-windows .trash,
+#windows-insite-input:checked ~ #all-windows .insite,
 #windows-board-input:checked ~ #all-windows .board,
 #windows-todoList-input:checked ~ #all-windows .todoList,
 #windows-update-input:checked ~ #all-windows .update,
@@ -710,7 +710,7 @@ textarea:focus {
 }
 #windows-ie-input:checked ~ #start-bar .ie-tab,
 #windows-calender-input:checked ~ #start-bar .calender-tab,
-#windows-trash-input:checked ~ #start-bar .trash-tab,
+#windows-insite-input:checked ~ #start-bar .insite-tab,
 #windows-board-input:checked ~ #start-bar .board-tab,
 #windows-todoList-input:checked ~ #start-bar .todoList-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
@@ -719,7 +719,7 @@ textarea:focus {
 }
 #windows-ie-input-min:checked ~ #all-windows .ie,
 #windows-calender-input-min:checked ~ #all-windows .calender,
-#windows-trash-input-min:checked ~ #all-windows .trash,
+#windows-insite-input-min:checked ~ #all-windows .insite,
 #windows-board-input-min:checked ~ #all-windows .board,
 #windows-todoList-input-min:checked ~ #all-windows .todoList,
 #windows-update-input-min:checked ~ #all-windows .update,
@@ -728,7 +728,7 @@ textarea:focus {
 }
 #windows-ie-input:checked ~ #start-bar .ie-tab,
 #windows-calender-input:checked ~ #start-bar .calender-tab,
-#windows-trash-input:checked ~ #start-bar .trash-tab,
+#windows-insite-input:checked ~ #start-bar .insite-tab,
 #windows-board-input:checked ~ #start-bar .board-tab,
 #windows-todoList-input:checked ~ #start-bar .todoList-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
@@ -737,7 +737,7 @@ textarea:focus {
 }
 #windows-ie-input-min:checked ~ #start-bar .ie-tab,
 #windows-calender-input-min:checked ~ #start-bar .calender-tab,
-#windows-trash-input-min:checked ~ #start-bar .trash-tab,
+#windows-insite-input-min:checked ~ #start-bar .insite-tab,
 #windows-board-input-min:checked ~ #start-bar .board-tab,
 #windows-todoList-input-min:checked ~ #start-bar .todoList-tab,
 #windows-update-input-min:checked ~ #start-bar .update-tab,
@@ -746,7 +746,7 @@ textarea:focus {
 }
 #windows-ie-input-on-top:checked ~ #all-windows .ie,
 #windows-calender-input-on-top:checked ~ #all-windows .calender,
-#windows-trash-input-on-top:checked ~ #all-windows .trash,
+#windows-insite-input-on-top:checked ~ #all-windows .insite,
 #windows-board-input-on-top:checked ~ #all-windows .board,
 #windows-todoList-input-on-top:checked ~ #all-windows .todoList,
 #windows-update-input-on-top:checked ~ #all-windows .update,
@@ -763,8 +763,8 @@ textarea:focus {
     justify-content: flex-start;
     padding: 4px 0 0 6px;
     flex-wrap: wrap;
-    height: 11rem;
-    width: 13rem;
+    height: 80%;
+    width: 100%;
     margin: 1rem;
     border: 3px inset;
 }

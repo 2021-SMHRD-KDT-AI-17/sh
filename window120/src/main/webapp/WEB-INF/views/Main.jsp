@@ -48,7 +48,7 @@
     <input type="checkbox" id="windows-update-input-min" name="windows-update-input-min" />
     <input type="checkbox" id="windows-calender-input-min" name="windows-calender-min" />
     <input type="checkbox" id="windows-todoList-input-min" name="windows-todoList-input-min" /> 
-    <input type="checkbox" id="windows-trash-input-min" name="windows-trash-input-min" /> 
+    <input type="checkbox" id="windows-insite-input-min" name="windows-insite-input-min" /> 
     <!-- Maximize Windows -->
     <input type="checkbox" id="windows-ie-input-max" name="windows-ie-input-max" /> 
     <input type="checkbox" id="windows-board-input-max" name="windows-board-input-max" />
@@ -56,7 +56,7 @@
     <input type="checkbox" id="windows-update-input-max" name="windows-update-input-max" />  
     <input type="checkbox" id="windows-calender-input-max" name="windows-calender-max" />  
     <input type="checkbox" id="windows-todoList-input-max" name="windows-todoList-input-max" /> 
-    <input type="checkbox" id="windows-trash-input-max" name="windows-trash-input-max" /> 
+    <input type="checkbox" id="windows-insite-input-max" name="windows-insite-input-max" /> 
     <!-- Window Order -->
     <input type="radio" id="windows-ie-input-on-top" name="windows-order" />
     <input type="radio" id="windows-board-input-on-top" name="windows-order" />
@@ -64,7 +64,7 @@
     <input type="radio" id="windows-update-input-on-top" name="windows-order" /> 
     <input type="radio" id="windows-calender-input-on-top" name="windows-order" /> 
     <input type="radio" id="windows-todoList-input-on-top" name="windows-order" />
-    <input type="radio" id="windows-trash-input-on-top" name="windows-order" /> 
+    <input type="radio" id="windows-insite-input-on-top" name="windows-order" /> 
     <!-- Window Visibility -->
     <input type="checkbox" id="windows-ie-input" name="windows-ie-input" /> 
     <input type="checkbox" id="windows-board-input" name="windows-board-input" /> 
@@ -72,7 +72,7 @@
     <input type="checkbox" id="windows-update-input" name="windows-update-input" /> 
     <input type="checkbox" id="windows-calender-input" name="windows-calender-input" /> 
     <input type="checkbox" id="windows-todoList-input" name="windows-todoList-input" /> 
-    <input type="checkbox" id="windows-trash-input" name="windows-trash-input" /> 
+    <input type="checkbox" id="windows-insite-input" name="windows-insite-input" /> 
 
 
 <!-- ============================================================================================================================================================================= -->  
@@ -128,7 +128,7 @@
             <div class="icon"><img  src="resources/assets/images/Todo.png" alt="" /> </div>
             <div class="text" style="font-weight: 500;">투두리스트</div>
         </label>
-        <label for="windows-empty-input" class="desktop-item">
+        <label for="windows-insite-input" class="desktop-item">
             <div class="icon"><img  src="resources/assets/images/insite.png" alt="" /> </div>
             <div class="text" style="font-weight: 500;">인사이트</div>
         </label>
@@ -273,13 +273,13 @@
 
 <!-- ============================================================================================================================================================================= -->   
         
-        <!-- Trash 클릭 시 나오는 화면 -->
-        <div class="window trash windows-box-shadow" id="ohj4">
-            <div class="header"><label for="windows-trash-input-on-top"><div id="draggable4">게시판</div></label>
+         <!-- 인사이트 클릭시 나오는 화면 -->
+        <div class="window insite windows-box-shadow" id="ohj4">
+            <div class="header"><label for="windows-insite-input-on-top"><div id="draggable4">인사이트</div></label>
                 <div class="header-buttons">
-                    <label for="windows-trash-input-min" class="minimize windows-box-shadow"></label>
-                    <label for="windows-trash-input-max" class="maximize windows-box-shadow"></label>
-                    <label for="windows-trash-input" class="close windows-box-shadow">X</label>
+                    <label for="windows-insite-input-min" class="minimize windows-box-shadow"></label>
+                    <label for="windows-insite-input-max" class="maximize windows-box-shadow"></label>
+                    <label for="windows-insite-input" class="close windows-box-shadow">X</label>
                 </div>
             </div>
             <div class="options line">
@@ -290,23 +290,8 @@
                 <div class="item">Favourites</div>
                 <div class="item">Help</div>
             </div>
-            <div class="content white">
-                <input type="radio" name="trash-radio" id="windows-11" />
-                <input type="radio" name="trash-radio" id="macos" />
-                <input type="radio" name="trash-radio" id="itunes" />
-                <label class="file windows-11" for="windows-11">
-                    <span class="image"><img  src="resources/assets/images/redCheck.png" alt="" /></span>
-                    <span class="text">질문게시판</span>
-                    <iframe src="https://www.naver.com/"></iframe>
-                </label>
-                <label class="file macos" for="macos">
-                    <span class="image"><img  src="resources/assets/images/redCheck.png" alt="" /></span>
-                    <span class="text">토론게시판</span>
-                </label>
-                <label class="file itunes" for="itunes">
-                    <span class="image"><img  src="resources/assets/images/redCheck.png" alt="" /></span>
-                    <span class="text">수업 자료</span>
-                </label>
+		            <div class="content">
+                <iframe src="goInsite"></iframe>
             </div>
         </div>
 <!-- ============================================================================================================================================================================= -->   
@@ -466,7 +451,7 @@
                 <label for="windows-calender-input-min" class="calender-tab tab windows-box-shadow"><span><img  src="resources/assets/images/calendar.png" alt="" /></span><span>Calender</span></label>
                 <label for="windows-board-input-min" class="board-tab tab windows-box-shadow"><span><img  src="resources/assets/images/board.png" alt="" /></span><span>게시판</span></label>
                 <label for="windows-update-input-min" class="update-tab tab windows-box-shadow"><span><img  src="resources/assets/images/redCheck.png" alt="" /></span><span>Windows Update</span></label>
-                <label for="windows-trash-input-min" class="trash-tab tab windows-box-shadow"><span><img  src="resources/assets/images/redCheck.png" alt="" /></span><span>게시판</span></label>
+                <label for="windows-insite-input-min" class="insite-tab tab windows-box-shadow"><span><img  src="resources/assets/images/insite.png" alt="" /></span><span>인사이트</span></label>
                 <label for="windows-todoList-input-min" class="todoList-tab tab windows-box-shadow"><span><img  src="resources/assets/images/Todo.png" alt="" /></span><span>TodoList</span></label>
             </div>
         </div>
@@ -485,9 +470,9 @@
                         <li><label for="windows-calender BBH-input"><img  src="resources/assets/images/calendar.png" alt="" /> calender</label></li>
                     </ul>
                 </li>
-                <li><label for="windows-board-input"><img  src="resources/assets/images/board.png" style="width: 1.5rem;" alt="" /> board</label></li>
+                <li><label for="windows-board-input"><img  src="resources/assets/images/board.png" style="width: 1.5rem;" alt="" /> 게시판</label></li>
                 <li class="line"><label for="windows-announce-input"><img  src="resources/assets/images/notice.png" style="width: 1.5rem;" alt="" />공지사항</label></li>
-                <li><label for="login-screen-input"><img  src="resources/assets/images/redCheck.png" style="margin: 0 0.5rem 0 0;" alt="" /> Log Off <span class="spiderman logout-prompt"> Spiderman...</span><span class="zark-muckerberg logout-prompt"> Zark Muckerberg...</span><span class="donald-trump logout-prompt"> Donald Trump...</span></label></li>
+                <li><label for="windows-insite-input"><img  src="resources/assets/images/insite.png" style="width: 1.5rem;" alt="" /> 인사이트</label></li>
                 <li><label for="shutdown-screen-input"><img  src="resources/assets/images/redCheck.png" style="margin: 0 0.5rem 0 0;" alt="" /> 로그아웃</label></li>
             </ul>
         </div>
@@ -506,12 +491,6 @@
 		<%}%>
 			
 <!-- ============================================================================================================================================================================= -->   
-
-      <!-- 우측 하단 현재시각 -->
-      <a href="goTeamMain">버튼</a>
-       <a href="goSendAdminMessage">메세지작성</a>
-        <a href="goMessage">메세지보기</a>
-        <a href="goInsite">인사이트</a>
         <div id="time-options"></div>
            <script>
                var Target = document.getElementById("time-options");
@@ -638,7 +617,7 @@
 	            isDragging3 = false;
 	        });
 	        
-        <!-- ==========================(4)Trash========================== -->
+        <!-- ==========================(4)insite========================== -->
        
 	        const draggableElement4 = document.getElementById('draggable4');
 	        const ohj4 = document.getElementById('ohj4');

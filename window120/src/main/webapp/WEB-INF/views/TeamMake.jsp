@@ -71,19 +71,26 @@ button img {
         <div class="sunken-panel" style="height: 580px; width: 970px;">
 	<form action="teamMake" method="post">
 		<table style="width:100%;">
-		<thead style="width:100%;">
+		<thead>
 			<tr>
 				<th style="width:20%; font-size:30px;">팀 이름</th>
-				<td style="width:100%;"><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_name"></td>
+				<td><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_name"></td>
 			</tr>
 			<tr>
-				<td style="width:20%; font-size:30px;">공유 GitHub 주소</td>
-				<td style="width:100%;"><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_Git"></td>
+				<th style="width:20%; font-size:30px;">공유 GitHub 주소</th>
+				<td><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_Git"></td>
 			</tr>
 			<tr>
-				<td style="width:20%; font-size:30px;">팀 소개</td>
-				<td style="width:100%;"><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_explanation"></td>
+				<th colspan="2" style="font-size:30px;">팀 소개</th>
 			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td colspan="2" style="width:100%;">
+			<textarea style="margin-top:7px; width:100%; height: 400px; font-size:20px;" rows="6" name="team_explanation"></textarea>
+			</td>
+			</tr>
+			</tbody>
 		</table>
 		
 		<div style="position: absolute; bottom: 0; left: 95%; transform: translateX(-50%);">
