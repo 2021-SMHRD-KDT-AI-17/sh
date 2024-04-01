@@ -193,7 +193,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<div id="map" style="width:1260px; height: 400px;"></div>
+									<div id="map" style="width:1235px; height: 400px;"></div>
 									<div>
 										<p style="font-size:20px; font-weight: bold;">광주광역시 동구 예술길 31-15 광주아트센터 3~5, 7층</p>
 									</div>
@@ -263,6 +263,10 @@ var mapOptions = {
     center: new naver.maps.LatLng(35.1497911, 126.9199378),
     zoom: 18
 };
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(35.1497911, 126.9199378),
+    map: map
+});
 
 var map = new naver.maps.Map('map', mapOptions);
 </script>

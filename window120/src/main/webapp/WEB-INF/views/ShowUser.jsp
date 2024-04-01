@@ -7,13 +7,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-
-
-
-
 <!-- 1.request영역에 저장된 정보를 가져오시오. -->
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,55 +16,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://unpkg.com/98.css">
 <style>
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: block;
+}
+
 .window {
-    width: 300px;
-    height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-.title-bar {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-}
-
-.title-bar-text {
-    font-weight: bold;
+	width: 300px;
+	height: auto;
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .window-body {
-    padding: 10px;
+	position: relative; /* 부모 컨테이너를 상대적으로 설정합니다. */
 }
 
-.field-row-stacked {
-    margin-bottom: 10px;
-}
-
-.button {
-    padding: 5px 10px;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-.title-bar-text {
-    font-weight: bold;
-    font-size: 16px; /* 텍스트의 크기를 20px로 설정 */
-}
-th, td {
-    font-size: 16px; /* th와 td의 텍스트 크기를 16px로 설정 */
-     font-family: Gulim, Arial, sans-serif;
+.window-body>* {
+	position: absolute; /* 자식 요소를 절대적으로 설정합니다. */
+	/* 위치를 제어하기 위해 위, 왼쪽, 오른쪽 또는 아래와 같은 다른 위치 속성을 지정할 수도 있습니다. */
 }
 
 </style>
-
 </head>
 <style>
 </style>
-<body style="text-align: center;" bgcolor="#008080">
+<body>
 	
 	<%
 	  // 현재 날짜를 가져옵니다.
@@ -85,7 +61,7 @@ th, td {
 	%>
 	<c:set var="todayDate" value="<%= todayDate %>" />
 	
-	<div class="window" style="width: 386px">
+	<div class="window" style="height: 650px; width: 1280px;">
 		<div class="title-bar">
 			<div class="title-bar-text">학생 리스트</div>
 			<div class="title-bar-controls">
@@ -94,20 +70,23 @@ th, td {
 				<button aria-label="Close" onclick="window.location.href='goMain'"></button>
 			</div>
 			</div>
-			<div class="sunken-panel" style="height: 240px; width: 386px;">
-				<table class="interactive">
-					<thead>
+			<div class="window tab-content" role="tabpanel" id="announce-tab"
+			style="height: 630px; width: 1290px; top: 48.5%">
+			<div class="window-body" style="position: fixed;">
+				<div class="sunken-panel" style="height: 610px; width: 1270px;">
+					<table class="interactive">
+					<thead style="width: 100%;">
 						<tr>
-							<th>No</th>
-							<th>아이디</th>
-							<th>이름</th>
-							<th>전화번호</th>
-							<th>구분</th>
-							<th>입실</th>
-							<th>퇴실</th>
+							<th style="width: 5%; font-size: 30px">No</th>
+							<th style="width: 20%; font-size: 30px">아이디</th>
+							<th style="width: 20%; font-size: 30px">이름</th>
+							<th style="width: 20%; font-size: 30px">전화번호</th>
+							<th style="width: 10%; font-size: 30px">구분</th>
+							<th style="width: 10%; font-size: 30px">입실</th>
+							<th style="width: 10%; font-size: 30px">퇴실</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody style="width:100%; height:600px;">
 					    <% int count = 0; %>
 					    <c:forEach items="${list}" var="m">
 					        <c:if test="${m.rank_num == 0 || m.rank_num == 3}">
@@ -157,6 +136,7 @@ th, td {
 		</div>
 	
 	<!-- ------------------------------------------------------------------------- -->
+	</div>
 	</div>
 	<!-- Scripts -->
 	<script>

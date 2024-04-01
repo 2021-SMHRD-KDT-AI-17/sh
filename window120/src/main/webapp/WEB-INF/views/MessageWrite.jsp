@@ -19,8 +19,12 @@
 			<tr>
 				<th style="font-size: 30px;">카테고리</th>
 				<td>
-				<input type="radio" name="catagory" value="건의사항" checked="checked">건의사항
-				<input type="radio" name="catagory" value="권한요청">권한요청
+				<div class="field-row">
+				 <input id="radio10" type="radio" name="catagory" value="건의사항" checked="checked">
+				 <label style="font-size:20px;" for="radio10">건의사항</label>
+				 <input id="radio11" type="radio" name="catagory" value="권한요청">
+				 <label style="font-size:20px;" for="radio11">권한요청</label>
+				 </div>
 				</td>
 			</tr>
 			
