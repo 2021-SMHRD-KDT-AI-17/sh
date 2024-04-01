@@ -116,10 +116,10 @@
             <div class="icon"><img  src="resources/assets/images/board.png" alt="" /> </div>
             <div class="text" style="font-weight: 500;">게시판</div>
         </label>
-        <label for="windows-empty-input" class="desktop-item">
+<!--         <label for="windows-empty-input" class="desktop-item">
             <div class="icon"><img  src="resources/assets/images/buddylogo.png" alt="" /> </div>
             <div class="text" style="font-weight: 500;">채팅</div>
-        </label>
+        </label> -->
         <label for="windows-calender-input" class="desktop-item">
             <div class="icon"><img  src="resources/assets/images/calendar.png" alt="" /> </div>
             <div class="text" style="font-weight: 500;">캘린더</div>

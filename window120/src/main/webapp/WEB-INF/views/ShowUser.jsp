@@ -105,8 +105,6 @@ th, td {
 							<th>구분</th>
 							<th>입실</th>
 							<th>퇴실</th>
-							<th>상점</th>
-							
 						</tr>
 					</thead>
 					<tbody>
@@ -150,8 +148,6 @@ th, td {
 					                </c:choose>
 					                </c:forEach>
 					                </td>
-					                
-					                <td>${m.point}</td>
 					            </tr>
 					        </c:if>
 					    </c:forEach>
