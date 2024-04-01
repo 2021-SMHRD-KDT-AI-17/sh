@@ -59,10 +59,17 @@ button img {
 <p>게시판으로 이동<p>
 </button>
 <br>
-<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goSendAdminMessage'">
+<% if (loginMember.getRank_num() != 2) { %>
+<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goSendAdminMessage'" >
 <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
 <p>건의 및 권한요청<p>
 </button>
+<%}else { %>
+<button style="width:260px; height:60px; font-size:23px; margin-top:210px;" onclick="window.location.href='goMessage'" >
+<img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-4.png">
+<p>건의사항 확인<p>
+</button>
+<%} %>
 <br>
 <button disabled style="width:260px; height:380px;margin-top:260px;">
     <img src="resources/assets/images/smhrd2.png" style="width:237px; height:360px;">
@@ -84,8 +91,8 @@ button img {
                      <tr>
                         <td style="font-size:20px;">${s.count }</td>
                         <td style="font-size:20px;">${t.team_name }</td>
-                        <td><button style="margin-left:15%; font-size:20px;" onclick="location.href='participateTeam?team_number=${t.team_number}'">팀참가</button></td>
-                        <td><button style="margin-left:15%; font-size:20px;" onclick="location.href='goTeamDetail?team_number=${t.team_number}'">입장</button></td>
+                        <td><button style="margin-left:16%; font-size:20px; text-align: center;" onclick="location.href='participateTeam?team_number=${t.team_number}'">팀참가</button></td>
+                        <td><button style="margin-left:16%; font-size:20px; text-align: center;" onclick="location.href='goTeamDetail?team_number=${t.team_number}'">입장</button></td>
                      </tr>
                   </c:forEach>
                   </tbody>

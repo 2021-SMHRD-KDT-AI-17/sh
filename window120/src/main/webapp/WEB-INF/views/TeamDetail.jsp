@@ -106,12 +106,18 @@ button img {
 		</tr>
 		<tr>
 			<th style="width:20%; font-size:20px;">URL 주소</th>
-			<td style="font-size:20px;"><a href="${team.team_URL }" target="_blank">${team.team_URL }</a></td>
+			<td style="font-size:15px;"><a href="${team.team_URL }" target="_blank">${team.team_URL }</a></td>
 		</tr>
 		<tr>
-			<th style="width:20%; font-size:20px;">팀설명</th>
-			<td style="font-size:20px;">${team.team_explanation }</td>
+			<th colspan="2" style="font-size:20px;">팀설명</th>
+			
 		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td style="font-size:20px;">${team.team_explanation }</td>
+		</tr>
+		</tbody>
 	</table>
 	
 	

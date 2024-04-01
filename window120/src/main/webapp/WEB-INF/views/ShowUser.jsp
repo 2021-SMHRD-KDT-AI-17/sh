@@ -16,13 +16,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://unpkg.com/98.css">
 <style>
-.tab-content {
-	display: none;
-}
-
-.tab-content.active {
-	display: block;
-}
 
 .window {
 	width: 300px;
