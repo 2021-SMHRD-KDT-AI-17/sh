@@ -23,14 +23,14 @@
 }
 
 #qr {
-	height: 600px;
+	height: 400px;
 	padding-left: 22px;
 	vertical-align: middle;
 	align-content: center;
 }
 
 #qrtext {
-	font-size: 90px;
+	font-size: 50px;
 	margin-top: 0;
 	text-align: center;
 	margin-bottom: 0;
@@ -44,9 +44,10 @@
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 5px;
+	margin-bottom: 5px;
 }
 
-#closeBtn:active {
+#eveningBtn:hover {
 	background-color: #b300b3;
 }
 

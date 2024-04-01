@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Team;
 import kr.smhrd.mapper.TeamMapper;
+import lombok.NonNull;
 
 @Controller
 public class TeamController {
@@ -44,8 +45,9 @@ public class TeamController {
 		
 		String team_name = request.getParameter("team_name");
 		String team_Git = request.getParameter("team_Git");
+		String team_explanation = request.getParameter("team_explanation");
 		
-		Team team = new Team(team_name, team_Git);
+		Team team = new Team(team_name, team_Git, team_explanation);
 		teamMapper.teamMake(team);
 		
 		
@@ -91,8 +93,9 @@ public class TeamController {
 		String team_name = request.getParameter("team_name");
 		String team_Git = request.getParameter("team_Git");
 		String team_URL = request.getParameter("team_URL");
+		String team_explanation = request.getParameter("team_explanation");
 		
-		Team team = new Team(team_number, team_name, team_Git, team_URL);
+		Team team = new Team(team_number, team_name, team_Git, team_URL, team_explanation);
 		
 		teamMapper.updateTeam(team);
 		
