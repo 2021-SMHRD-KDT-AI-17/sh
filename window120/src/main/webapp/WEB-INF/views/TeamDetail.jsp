@@ -108,6 +108,10 @@ button img {
 			<th style="width:20%; font-size:20px;">URL 주소</th>
 			<td style="font-size:20px;">${team.team_URL }</td>
 		</tr>
+		<tr>
+			<th style="width:20%; font-size:20px;">팀설명</th>
+			<td style="font-size:20px;">${team.team_explanation }</td>
+		</tr>
 	</table>
 	
 	

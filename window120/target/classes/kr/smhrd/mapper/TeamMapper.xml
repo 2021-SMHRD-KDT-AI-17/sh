@@ -3,7 +3,7 @@
 <mapper namespace="kr.smhrd.mapper.TeamMapper">
 
 	<insert id="teamMake" parameterType="kr.smhrd.entity.Team">
-		insert into team_info(team_name, team_Git) values (#{team_name}, #{team_Git})
+		insert into team_info(team_name, team_Git, team_explanation) values (#{team_name}, #{team_Git}, #{team_explanation})
 	</insert>
 
 	<select id="selectTeam" resultType="kr.smhrd.entity.Team">
@@ -23,7 +23,7 @@
 	</select>
 	
 	<update id="updateTeam" parameterType="kr.smhrd.entity.Team">
-		update team_info set team_name=#{team_name}, team_Git=#{team_Git}, team_URL=#{team_URL} where team_number=#{team_number}
+		update team_info set team_name=#{team_name}, team_Git=#{team_Git}, team_URL=#{team_URL}, team_explanation=#{team_explanation} where team_number=#{team_number}
 	</update>
 
 

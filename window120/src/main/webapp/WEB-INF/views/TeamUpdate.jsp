@@ -82,7 +82,11 @@ button img {
 			</tr>
 			<tr>
 				<th style="width:20%; font-size:30px;">공유 URL 주소</th>
-				<td style="width:100%;"><input style="width: 99%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_URL"></td>
+				<td style="width:100%;"><input style="width: 99%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_URL" value=${team.team_URL }></td>
+			</tr>
+			<tr>
+				<th style="width:20%; font-size:30px;">팀 소개</th>
+				<td style="width:100%;"><input style="width: 99%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_explanation" value=${team.team_explanation }></td>
 			</tr>
 			</thead>
 		</table>

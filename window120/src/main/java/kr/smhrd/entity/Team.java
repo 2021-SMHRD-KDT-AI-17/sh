@@ -19,7 +19,6 @@ public class Team {
 	@NonNull private String team_name;
 	@NonNull private String team_Git;
 	private String team_URL;
-	
-	
+	@NonNull private String team_explanation;
 	
 }

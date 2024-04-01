@@ -80,6 +80,10 @@ button img {
 				<td style="width:20%; font-size:30px;">공유 GitHub 주소</td>
 				<td style="width:100%;"><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_Git"></td>
 			</tr>
+			<tr>
+				<td style="width:20%; font-size:30px;">팀 소개</td>
+				<td style="width:100%;"><input style="width: 100%; height:80%; margin-bottom:3px; font-size:20px;" type="text" name="team_explanation"></td>
+			</tr>
 		</table>
 		
 		<div style="position: absolute; bottom: 0; left: 95%; transform: translateX(-50%);">
