@@ -102,11 +102,11 @@ button img {
 		</tr>
 		<tr>
 			<th style="width:20%; font-size:20px;">GitHub 주소</th>
-			<td style="font-size:20px;">${team.team_Git }</td>
+			<td style="font-size:20px;"><a href="${team.team_Git }" target="_blank">Git주소 이동</a></td>
 		</tr>
 		<tr>
 			<th style="width:20%; font-size:20px;">URL 주소</th>
-			<td style="font-size:20px;">${team.team_URL }</td>
+			<td style="font-size:20px;"><a href="${team.team_URL }" target="_blank">${team.team_URL }</a></td>
 		</tr>
 		<tr>
 			<th style="width:20%; font-size:20px;">팀설명</th>
