@@ -29,26 +29,6 @@
 <body onload="openPopup()">
 	<% Member loginMember = (Member) session.getAttribute("loginMember"); %>
 	
-<!-- 	
-	팝업기능 
-        아침팝업
-	    <div id="popup1">
-		    <img src='https://ifh.cc/g/wSBf2l.jpg' class="qr">
-		    <h1 class="qrtext">아 맞다 큐알!</h1>
-		    <form action="poppop" method="post">
-		           <button type="submit" id="morningBtn" onclick="hidePopup1()" name="data">아침</button>
-		    </form>
-		</div>
-		
-		저녁팝업
-		<div id="popup2">
-		    <img src='https://ifh.cc/g/wSBf2l.jpg' class="qr">
-		    <h1 class="qrtext">아 맞다 큐알!</h1>
-		    <form action="poppop" method="post">
-		           <button type="submit" id="eveningBtn" onclick="hidePopup2()" name="data">저녁</button>
-		    </form>
-		</div> 
-	 -->	
 	<form id="windows">	 
     <!-- Login and Shutdown -->
     <!-- Start - LogOff 클릭 시 나오는 화면 -->
@@ -816,7 +796,7 @@
         	// 팝업 창의 너비
             var popupWidth = 500;
             // 팝업 창의 높이
-            var popupHeight = 300;
+            var popupHeight = 550;
             // 팝업 창을 가운데 정렬하기 위한 좌표 계산
             var left = (screen.width - popupWidth) / 2;
             var top = (screen.height - popupHeight) / 2;
@@ -828,7 +808,7 @@
         	// 팝업 창의 너비
             var popupWidth = 500;
             // 팝업 창의 높이
-            var popupHeight = 300;
+            var popupHeight = 600;
             // 팝업 창을 가운데 정렬하기 위한 좌표 계산
             var left = (screen.width - popupWidth) / 2;
             var top = (screen.height - popupHeight) / 2;
