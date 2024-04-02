@@ -219,6 +219,12 @@
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
+=======
+			</div>
+		</div>
+		
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-17/sh.git
 
 				<script>
 					document.addEventListener("DOMContentLoaded", function() {

@@ -19,7 +19,7 @@
    </select>
    
    <select id="selectFboardComment" parameterType="int" resultType="kr.smhrd.entity.FboardComment">
-      select * from fboard_comment where fb_idx=#{fb_idx}
+      select * from fboard_comment where fb_idx=#{fb_idx} order by cmt_dt desc
    </select>
    
    <insert id="fboardCommentJoin" parameterType="kr.smhrd.entity.FboardComment">
