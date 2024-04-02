@@ -45,6 +45,7 @@
         <td>라이브러리</td>
         <td>
          <img src="https://img.shields.io/badge/NaverMap-03C75A?style=for-the-badge&logo=Naver&logoColor=black">
+         <img src="https://img.shields.io/badge/GoogleCalendar-4285F4?style=for-the-badge&logo=GoogleCalendar&logoColor=white">
         </td>
     </tr>
     <tr>
