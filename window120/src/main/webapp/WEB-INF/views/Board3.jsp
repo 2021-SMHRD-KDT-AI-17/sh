@@ -196,7 +196,7 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page3 eq '3' }">
-                     <c:forEach items="${q_list }" var="f" begin="30" end="${f_size }" step="1" varStatus="s">
+                     <c:forEach items="${f_list }" var="f" begin="30" end="${f_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count+30 }</td>
                         <td><a href="FboardContent?fb_idx=${f.fb_idx }">${f.fb_title }</a></td>
@@ -213,19 +213,19 @@ button img {
             </table>
             <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
             <c:choose>
-               <c:when test="${f_size<20 }">
+               <c:when test="${f_size<15 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDataBoard">[1]</a><span></p> 
                   <br>
                   <br>
                </c:when>
-               <c:when test="${f_size>=20 and f_size<40 }">
+               <c:when test="${f_size>=15 and f_size<30 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></p>
                   <br>
                   <br>
                </c:when>
-               <c:when test="${f_size>=40}">
+               <c:when test="${f_size>=30}">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;"">페이지 : <a href="goDataBoard">[1]</a><span></span><a href="goFboardMain2">[2]</a><span></span><a href="goFboardMain3">[3]</a></p>
                   <br>

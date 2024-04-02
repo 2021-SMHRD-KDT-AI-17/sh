@@ -35,38 +35,46 @@
 	<form action="announcementInsert" method="post">
 		<div class="window" style="height: 650px; width: 1280px;">
 			<div class="window tab-content" role="tabpanel"
-				style="height: 630px; width: 1290px; top: 48.5%">
+				style="height: 660px; width: 1290px; top: 48.5%">
 				<div class="window-body" style="position: fixed;">
-					<div class="sunken-panel" style="height: 610px; width: 1270px;">
+					<div class="sunken-panel" style="height: 650px; width: 1270px;">
 						<table style="width: 100%;" class="interactive">
-							<thead style="width: 100%;">
-								<th>공지사항</th>
+							<thead style="width: 100%; font-size: 30px; text-align: center;">
+								<th colspan="2">공지사항</th>
 								<tr>
-									<td>제목</td>
-									<td><input type="text" name="title"></td>
+									<th style="width: 20%;">제목</th>
+									<th><input style="width: 100%; height: 80%; margin-bottom:3px; font-size:20px;" type="text" name="title"></th>
 								</tr>
 								<tr>
-									<td>작성자</td>
-									<td><input readonly type="text" name="writer"
-										value="<%=loginMember.getId()%>"></td>
+									<th style="width: 20%;">작성자</th>
+									<th><input style="width: 100%; height: 80%; margin-bottom:3px; font-size:20px;" readonly type="text" name="writer"
+										value="<%=loginMember.getId()%>"></th>
 								</tr>
 								<tr>
-									<td>내용</td>
+									<th colspan="2">내용</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody style="width: 100%; font-size: 20px;">
 							<tr>
-							<td><textarea type="text" name="content"></td>
+							<td colspan="2"><textarea rows="10" style="width:100%; height: 400px; font-size:20px;" name="content"></textarea></td>
 							</tr>
+							<td colspan="2">
+			<div style="text-align: right; padding: 8px; height: 1%;">
+				<button type="button" style="font-size:15px;" onclick="goBack()">뒤로가기</button>
+				<input style="font-size:15px;" type="submit" value="작성하기">
+			</div>
+			</td>
 							</tbody>
-							<tr>
-									<td colspan="2"><input type="submit" value="작성"></td>
-								</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
+	<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 </body>
 </html>
