@@ -106,6 +106,10 @@
 ![image](https://ifh.cc/g/ob2Nvg.jpg)
 <br>
 
+### 게시판
+![image](https://ifh.cc/g/s5YMrQ.jpg)
+<br>
+
 ### 반 일정/팀 일정
 ![image](https://ifh.cc/g/ODvqk5.jpg)
 <br>
