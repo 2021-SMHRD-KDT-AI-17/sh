@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.file.diary').addEventListener('click', function() {
             // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
             document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain3';
-            // 나머지 코드는 동일하게 유지
+            // 나머지 코드는 동일하게 유지 d
             // 첫 번째 iframe 숨기기
             document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
             // 두 번째 iframe 보이기
