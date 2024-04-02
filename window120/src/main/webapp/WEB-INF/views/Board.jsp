@@ -125,7 +125,7 @@ button img {
                 <tbody style="font-size:20px">   
                 <!-- 페이징 구현 -->
                <c:choose>
-               <c:when test="${q_size<20 }">
+               <c:when test="${q_size<15 }">
                   <c:forEach items="${q_list }" var="q" begin="0" end="${q_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
@@ -136,10 +136,10 @@ button img {
                      </tr>
                   </c:forEach>
                </c:when>
-               <c:when test="${q_size>=20 and q_size<40 }">
+               <c:when test="${q_size>=15 and q_size<30 }">
                <c:choose>
                   <c:when test="${page1 eq '1' }">
-                  <c:forEach items="${q_list }" var="q" begin="0" end="19" step="1" varStatus="s">
+                  <c:forEach items="${q_list }" var="q" begin="0" end="14" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
@@ -150,9 +150,9 @@ button img {
                   </c:forEach>
                </c:when>
                <c:when test="${page1 eq '2' }">
-                     <c:forEach items="${q_list }" var="q" begin="20" end="${q_size }" step="1" varStatus="s">
+                     <c:forEach items="${q_list }" var="q" begin="15" end="${q_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+20 }</td>
+                        <td>${s.count+15 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>
@@ -163,10 +163,10 @@ button img {
                   </c:choose>
                </c:when>
                
-               <c:when test="${q_size>=40 and q_size<60 }">
+               <c:when test="${q_size>=30 and q_size<45 }">
                      <c:choose>
                      <c:when test="${page1 eq '1' }">
-                     <c:forEach items="${q_list }" var="q" begin="0" end="19" step="1" varStatus="s">
+                     <c:forEach items="${q_list }" var="q" begin="0" end="14" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
@@ -177,9 +177,9 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page1 eq '2' }">
-                     <c:forEach items="${q_list }" var="q" begin="20" end="39" step="1" varStatus="s">
+                     <c:forEach items="${q_list }" var="q" begin="15" end="29" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+20 }</td>
+                        <td>${s.count+15 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>
@@ -188,9 +188,9 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page1 eq '3' }">
-                     <c:forEach items="${q_list }" var="q" begin="40" end="${q_size }" step="1" varStatus="s">
+                     <c:forEach items="${q_list }" var="q" begin="30" end="${q_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+40 }</td>
+                        <td>${s.count+30 }</td>
                         <td><a href="QboardContent?qb_idx=${q.qb_idx }">${q.qb_title }</a></td>
                         <td>${q.user_id }</td>
                         <td>${q.qb_dt }</td>
@@ -205,19 +205,19 @@ button img {
             </table>
             <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
             <c:choose>
-               <c:when test="${q_size<20 }">
+               <c:when test="${q_size<15 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goBoardMain">[1]</a><span></p> 
                   <br>
                   <br>
                </c:when>
-               <c:when test="${q_size>=20 and q_size<40 }">
+               <c:when test="${q_size>=15 and q_size<30 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goBoardMain">[1]</a><span></span><a href="goQboardMain2">[2]</a><span></p>
                   <br>
                   <br>
                </c:when>
-               <c:when test="${q_size>=40}">
+               <c:when test="${q_size>=30}">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;"">페이지 : <a href="goBoardMain">[1]</a><span></span><a href="goQboardMain2">[2]</a><span></span><a href="goQboardMain3">[3]</a></p>
                   <br>
