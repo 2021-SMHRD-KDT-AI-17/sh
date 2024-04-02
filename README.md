@@ -1,5 +1,5 @@
 # 📎 우리것좀 써주세요(팀명: 스마트인재서야개발원)
-![image]([https://user-images.githubusercontent.com/25995055/178401309-2a2ffc86-ef45-439b-bfd8-6978312100bc.png](https://ifh.cc/g/7LKFwz.png))
+![image](https://ifh.cc/g/7LKFwz.png)
 
 
 ## 👀 서비스 소개
