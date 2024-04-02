@@ -133,7 +133,7 @@ button img {
                 <tbody style="font-size:20px">   
                 <!-- 페이징 구현 -->
                <c:choose>
-               <c:when test="${d_size<20 }">
+               <c:when test="${d_size<15 }">
                   <c:forEach items="${d_list }" var="d" begin="0" end="${d_size }" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
@@ -144,10 +144,10 @@ button img {
                      </tr>
                   </c:forEach>
                </c:when>
-               <c:when test="${d_size>=20 and d_size<40 }">
+               <c:when test="${d_size>=15 and d_size<30 }">
                <c:choose>
                   <c:when test="${page2 eq '1' }">
-                  <c:forEach items="${d_list }" var="d" begin="0" end="19" step="1" varStatus="s">
+                  <c:forEach items="${d_list }" var="d" begin="0" end="14" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
                         <td><a href="DebateContent?d_idx=${d.d_idx }">${d.d_title }</a></td>
@@ -158,9 +158,9 @@ button img {
                   </c:forEach>
                </c:when>
                <c:when test="${page2 eq '2' }">
-                     <c:forEach items="${d_list }" var="d" begin="20" end="${d_size }" step="1" varStatus="s">
+                     <c:forEach items="${d_list }" var="d" begin="15" end="${d_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+20 }</td>
+                        <td>${s.count+15 }</td>
                         <td><a href="DebateContent?d_idx=${d.d_idx }">${d.d_title }</a></td>
                         <td>${d.user_id }</td>
                         <td>${d.d_dt }</td>
@@ -171,10 +171,10 @@ button img {
                   </c:choose>
                </c:when>
                
-               <c:when test="${d_size>=40 and d_size<60 }">
+               <c:when test="${d_size>=30 and d_size<45 }">
                      <c:choose>
                      <c:when test="${page2 eq '1' }">
-                     <c:forEach items="${d_list }" var="d" begin="0" end="19" step="1" varStatus="s">
+                     <c:forEach items="${d_list }" var="d" begin="0" end="14" step="1" varStatus="s">
                      <tr>
                         <td>${s.count }</td>
                         <td><a href="DebateContent?d_idx=${d.d_idx }">${d.d_title }</a></td>
@@ -185,9 +185,9 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page2 eq '2' }">
-                     <c:forEach items="${d_list }" var="d" begin="20" end="39" step="1" varStatus="s">
+                     <c:forEach items="${d_list }" var="d" begin="15" end="29" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+20 }</td>
+                        <td>${s.count+15 }</td>
                         <td><a href="DebateContent?d_idx=${d.d_idx }">${d.d_title }</a></td>
                         <td>${d.user_id }</td>
                         <td>${d.d_dt }</td>
@@ -196,9 +196,9 @@ button img {
                      </c:forEach>
                      </c:when>
                      <c:when test="${page2 eq '3' }">
-                     <c:forEach items="${d_list }" var="d" begin="40" end="${d_size }" step="1" varStatus="s">
+                     <c:forEach items="${d_list }" var="d" begin="30" end="${d_size }" step="1" varStatus="s">
                      <tr>
-                        <td>${s.count+40 }</td>
+                        <td>${s.count+30 }</td>
                         <td><a href="DebateContent?d_idx=${d.d_idx }">${d.d_title }</a></td>
                         <td>${d.user_id }</td>
                         <td>${d.d_dt }</td>
