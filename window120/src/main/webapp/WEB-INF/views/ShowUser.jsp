@@ -63,10 +63,10 @@
 					<thead style="width: 100%; text-align: center;">
 						<tr>
 							<th style="width: 5%; font-size: 30px">No</th>
-							<th style="width: 20%; font-size: 30px">아이디</th>
 							<th style="width: 20%; font-size: 30px">이름</th>
+							<th style="width: 20%; font-size: 30px">당번</th>
 							<th style="width: 20%; font-size: 30px">전화번호</th>
-							<th style="width: 10%; font-size: 30px">구분</th>
+							<th style="width: 20%; font-size: 30px">이메일</th>
 							<th style="width: 10%; font-size: 30px">입실</th>
 							<th style="width: 10%; font-size: 30px">퇴실</th>
 						</tr>
@@ -77,19 +77,17 @@
 					        <c:if test="${m.rank_num == 0 || m.rank_num == 3}">
 					            <tr>
 					                <td><%= ++count %></td>
-					                <td>${m.id}</td>
 					                <td>${m.name}</td>
-					                <td>${m.tel}</td>
 					                <td>
-					                    <c:choose>
-					                        <c:when test="${m.rank_num == 0}">
-					                            학생
-					                        </c:when>
-					                        <c:when test="${m.rank_num == 3}">
-					                            팀장
-					                        </c:when>
-					                    </c:choose>
+						                <c:choose>
+						                	<c:when test=''>
+						                		
+						                	</c:when>
+						                	<c:otherwise></c:otherwise>
+						                </c:choose>
 					                </td>
+					                <td>${m.tel}</td>
+					                <td>${m.email}</td>
 					                <td>
 					                <c:forEach items="${att_list1 }" var="att1">
 					                <c:choose>
@@ -123,15 +121,8 @@
 	</div>
 	<!-- Scripts -->
 	<script>
-  document.querySelectorAll('table.interactive').forEach(element => {
-    element.addEventListener('click', (event) => {
-      const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
-      if (row) {
-        row.classList.toggle('highlighted');
-      }
-    })
-  });
-</script>
+	
+	</script>
 
 	<script src="resources/assets/js/jquery.min.js"></script>
 	<script src="resources/assets/js/jquery.scrolly.min.js"></script>

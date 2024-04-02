@@ -15,7 +15,7 @@
 	</update>
 	
 	<select id="goShowMember" resultType="kr.smhrd.entity.Member">
-		select * from user_info where not(rank_num=2)
+		select * from user_info where not(rank_num=2) order by name
 	</select>
 	
 	<delete id="deleteMember" parameterType="String">

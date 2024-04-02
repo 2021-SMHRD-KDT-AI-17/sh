@@ -75,3 +75,31 @@ create table comment(
    writer varchar(50),
    comment varchar(2000)
 );
+
+delete from user_info where name='test2';
+
+
+
+update user_info set point=2 where name='고현우';
+update user_info set point=3 where name='고희청';
+update user_info set point=4 where name='권승호';
+update user_info set point=5 where name='김대원';
+update user_info set point=6 where name='김동준';
+update user_info set point=7 where name='김혜린';
+update user_info set point=8 where name='나유정';
+update user_info set point=9 where name='박상윤';
+update user_info set point=10 where name='서동현';
+update user_info set point=11 where name='신혜선';
+update user_info set point=12 where name='양세진';
+update user_info set point=13 where name='오현진';
+update user_info set point=14 where name='유승주';
+update user_info set point=15 where name='윤옥산';
+update user_info set point=16 where name='윤정원';
+update user_info set point=17 where name='이봄';
+update user_info set point=18 where name='임명택';
+update user_info set point=19 where name='장지오';
+update user_info set point=20 where name='정두연';
+update user_info set point=21 where name='정재원';
+update user_info set point=22 where name='조가현';
+update user_info set point=23 where name='조영훈';
+update user_info set point=24 where name='홍창민';
