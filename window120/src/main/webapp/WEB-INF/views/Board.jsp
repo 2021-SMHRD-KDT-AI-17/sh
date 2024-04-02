@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://unpkg.com/98.css"> <!-- 스타일시트 경로 수정 -->
+<link rel="stylesheet" href="https://unpkg.com/98.css">
 <title>탭 목록</title>
 <style>
  .tab-content {
