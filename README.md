@@ -119,7 +119,7 @@
 <br>
 
 ### 팀가입 / 팀정보 보기
-![image](https://ifh.cc/g/w2M9rs.jpg)
+![image](https://ifh.cc/g/q6BDMW.jpg)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
