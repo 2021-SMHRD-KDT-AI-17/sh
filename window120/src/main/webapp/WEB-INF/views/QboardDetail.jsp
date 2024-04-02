@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 
-<body style="overflow-y: scroll;">
+<body>
 
    <% 
       Member loginMember = (Member)session.getAttribute("loginMember"); 
@@ -42,7 +42,7 @@
             </tr>
          </thead>
          <tbody style="width: 100%; height: 200px; font-size: 20px;">
-            <td colspan="2"><img alt=""
+            <td style="overflow-y: scroll; height:200px;" colspan="2"><img style="width:auto; height:100%;" alt=""
                src="resources/image/${qboard.qb_file }"> <br>
                ${qboard.qb_content }</td>
          </tbody>
