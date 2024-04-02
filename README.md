@@ -102,6 +102,10 @@
 ![image](https://ifh.cc/g/dRamQs.jpg)
 <br>
 
+### 공지사항 / 진행중인 이벤트
+![image](https://ifh.cc/g/ob2Nvg.jpg)
+<br>
+
 ### 반 일정/팀 일정
 ![image](https://ifh.cc/g/ODvqk5.jpg)
 <br>
