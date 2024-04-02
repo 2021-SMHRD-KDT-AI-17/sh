@@ -213,19 +213,19 @@ button img {
             </table>
             <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
             <c:choose>
-               <c:when test="${d_size<20 }">
+               <c:when test="${d_size<15 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDebateBoard">[1]</a><span></p> 
                   <br>
                   <br>
                </c:when>
-               <c:when test="${d_size>=20 and d_size<40 }">
+               <c:when test="${d_size>=15 and d_size<30 }">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;">페이지 : <a href="goDebateBoard">[1]</a><span></span><a href="goDebateMain2">[2]</a><span></p>
                   <br>
                   <br>
                </c:when>
-               <c:when test="${d_size>=40}">
+               <c:when test="${d_size>=30}">
                   <br>
                   <p id="page1" style="text-align: center; font-size:20px;"">페이지 : <a href="goDebateBoard">[1]</a><span></span><a href="goDebateMain2">[2]</a><span></span><a href="goDebateMain3">[3]</a></p>
                   <br>
