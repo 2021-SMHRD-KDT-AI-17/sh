@@ -14,100 +14,68 @@
 <link rel="stylesheet" href="https://unpkg.com/98.css">
 <style>
 .window {
-    width: 300px;
-    height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-.title-bar {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-}
-
-.title-bar-text {
-    font-weight: bold;
+	width: 300px;
+	height: auto;
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .window-body {
-    padding: 10px;
+	position: relative; /* 부모 컨테이너를 상대적으로 설정합니다. */
 }
 
-.field-row-stacked {
-    margin-bottom: 10px;
+.window-body>* {
+	position: absolute; /* 자식 요소를 절대적으로 설정합니다. */
+	/* 위치를 제어하기 위해 위, 왼쪽, 오른쪽 또는 아래와 같은 다른 위치 속성을 지정할 수도 있습니다. */
 }
-
-.button {
-    padding: 5px 10px;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-.title-bar-text {
-    font-weight: bold;
-    font-size: 16px; /* 텍스트의 크기를 20px로 설정 */
-}
-th, td {
-    font-size: 16px; /* th와 td의 텍스트 크기를 16px로 설정 */
-     font-family: Gulim, Arial, sans-serif;
-}
-
-
 </style>
 
 </head>
 <style>
 </style>
-<body style="text-align: center;" bgcolor="#008080">
+<body>
 
 	<%
 	List<Member> list = (List<Member>) request.getAttribute("list");
 	%>
-	<div class="window" style="width: 386px">
-		<div class="title-bar">
-			<div class="title-bar-text">강사권한요청 리스트</div>
-			<div class="title-bar-controls">
-				<button aria-label="Minimize"></button>
-				<button aria-label="Maximize"></button>
-				<button aria-label="Close" onclick="window.location.href='goMain'"></button>
-			</div>
-			</div>
-			<div class="sunken-panel" style="height: 240px; width: 386px;">
-				<table class="interactive">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>아이디</th>
-							<th>이름</th>
-							<th>전화번호</th>
-							<th>승인</th>
-							<th>거절</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${list }" var="m" varStatus="status">
+	<div class="window" style="height: 630px; width: 1280px;">
+		<div class="window tab-content" role="tabpanel" id="announce-tab"
+			style="height: 660px; width: 1290px; top: 48.5%">
+			<div class="window-body" style="position: fixed;">
+				<div class="sunken-panel" style="height: 650px; width: 1270px;">
+					<table style="width: 100%;" class="interactive">
+						<thead style="width: 100%; text-align: center; font-size: 30px;">
 							<tr>
-								<td>${status.count }</td>
-								<td>${m.id }</td>
-								<td>${m.name }</td>
-								<td>${m.tel }</td>
-								<td><a href="rankUpdate?id=${m.id }">승인</a></td>
-								<td><a href="" onclick="rejectRequest(this)">거절</a></td>
+								<th>No</th>
+								<th>아이디</th>
+								<th>이름</th>
+								<th>전화번호</th>
+								<th>승인</th>
+								<th>거절</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						</thead>
+						<tbody style="text-align:center; font-weight:bold; font-size: 15px; width:100%; height:650px;">
+							<c:forEach items="${list }" var="m" varStatus="status">
+								<tr>
+									<td>${status.count }</td>
+									<td>${m.id }</td>
+									<td>${m.name }</td>
+									<td>${m.tel }</td>
+									<td><a href="rankUpdate?id=${m.id }">승인</a></td>
+									<td><a href="" onclick="rejectRequest(this)">거절</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
+
+			<!-- ------------------------------------------------------------------------- -->
 		</div>
-	
-	<!-- ------------------------------------------------------------------------- -->
-	</div>
-	<!-- Scripts -->
-	<script>
+		<!-- Scripts -->
+		<script>
   document.querySelectorAll('table.interactive').forEach(element => {
     element.addEventListener('click', (event) => {
       const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
@@ -117,7 +85,7 @@ th, td {
     })
   });
 </script>
-<script>
+		<script>
     function rejectRequest(element) {
         // 클릭된 요소의 부모인 <tr> 요소를 찾음
         var row = element.parentNode.parentNode;
@@ -128,12 +96,12 @@ th, td {
     }
 </script>
 
-	<script src="resources/assets/js/jquery.min.js"></script>
-	<script src="resources/assets/js/jquery.scrolly.min.js"></script>
-	<script src="resources/assets/js/jquery.scrollex.min.js"></script>
-	<script src="resources/assets/js/skel.min.js"></script>
-	<script src="resources/assets/js/util.js"></script>
-	<script src="resources/assets/js/main.js"></script>
+		<script src="resources/assets/js/jquery.min.js"></script>
+		<script src="resources/assets/js/jquery.scrolly.min.js"></script>
+		<script src="resources/assets/js/jquery.scrollex.min.js"></script>
+		<script src="resources/assets/js/skel.min.js"></script>
+		<script src="resources/assets/js/util.js"></script>
+		<script src="resources/assets/js/main.js"></script>
 </body>
 </html>
 

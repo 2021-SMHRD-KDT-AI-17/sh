@@ -19,7 +19,7 @@
    </select>
    
    <select id="selectDebateComment" parameterType="int" resultType="kr.smhrd.entity.DebateComment">
-      select * from debate_comment where d_idx=#{d_idx}
+      select * from debate_comment where d_idx=#{d_idx} order by cmt_dt desc
    </select>
    
    <insert id="debateCommentJoin" parameterType="kr.smhrd.entity.DebateComment">

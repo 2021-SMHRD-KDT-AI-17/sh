@@ -19,7 +19,7 @@
    </select>
    
    <select id="selectQboardComment" parameterType="int" resultType="kr.smhrd.entity.QboardComment">
-      select * from qboard_comment where qb_idx=#{num}
+      select * from qboard_comment where qb_idx=#{num} order by cmt_dt desc
    </select>
    
    <insert id="qboardCommentJoin" parameterType="kr.smhrd.entity.QboardComment">

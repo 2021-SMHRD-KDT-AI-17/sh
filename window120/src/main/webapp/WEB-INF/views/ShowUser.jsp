@@ -54,21 +54,13 @@
 	%>
 	<c:set var="todayDate" value="<%= todayDate %>" />
 	
-	<div class="window" style="height: 650px; width: 1280px;">
-		<div class="title-bar">
-			<div class="title-bar-text">학생 리스트</div>
-			<div class="title-bar-controls">
-				<button aria-label="Minimize"></button>
-				<button aria-label="Maximize"></button>
-				<button aria-label="Close" onclick="window.location.href='goMain'"></button>
-			</div>
-			</div>
+	<div class="window" style="height: 630px; width: 1280px;">
 			<div class="window tab-content" role="tabpanel" id="announce-tab"
-			style="height: 630px; width: 1290px; top: 48.5%">
+			style="height: 660px; width: 1290px; top: 48.5%">
 			<div class="window-body" style="position: fixed;">
-				<div class="sunken-panel" style="height: 610px; width: 1270px;">
-					<table class="interactive">
-					<thead style="width: 100%;">
+				<div class="sunken-panel" style="height: 650px; width: 1270px;">
+					<table style="width: 100%;" class="interactive">
+					<thead style="width: 100%; text-align: center;">
 						<tr>
 							<th style="width: 5%; font-size: 30px">No</th>
 							<th style="width: 20%; font-size: 30px">아이디</th>
@@ -79,7 +71,7 @@
 							<th style="width: 10%; font-size: 30px">퇴실</th>
 						</tr>
 					</thead>
-					<tbody style="width:100%; height:600px;">
+					<tbody style="text-align:center; font-weight:bold; font-size: 15px; width:100%; height:650px;">
 					    <% int count = 0; %>
 					    <c:forEach items="${list}" var="m">
 					        <c:if test="${m.rank_num == 0 || m.rank_num == 3}">
@@ -98,8 +90,6 @@
 					                        </c:when>
 					                    </c:choose>
 					                </td>
-					                
-					               
 					                <td>
 					                <c:forEach items="${att_list1 }" var="att1">
 					                <c:choose>
