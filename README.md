@@ -143,7 +143,7 @@
     <td align="center"><a href="https://github.com/yunoksan" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/bom26" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/SangYoon12" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/OHONGSAN" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/OHONGSAM" target='_blank'>github</a></td>
   </tr>
 </table>
 
