@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 
-<body>
+<body style="overflow-y: scroll;">
 
    <% 
       Member loginMember = (Member)session.getAttribute("loginMember"); 
