@@ -98,8 +98,8 @@
 ![image](https://ifh.cc/g/SrA4NT.jpg)
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+### 메인화면
+![image](https://ifh.cc/g/dRamQs.jpg)
 <br>
 
 ### 반 일정/팀 일정
