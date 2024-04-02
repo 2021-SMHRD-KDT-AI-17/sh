@@ -105,7 +105,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<div style="position: absolute; bottom: 0; left: 95%; transform: translateX(-50%);">
+					<div style="position: absolute; top: 460px;left: 95%; transform: translateX(-50%);">
 						<c:if test="${loginMember.rank_num eq '1' }">
 							<button onclick="location.href='goAnnouncementWrite'">공지작성</button>
 						</c:if>
@@ -113,6 +113,8 @@
 					<div style="position: absolute; bottom: 0; width: 100%">
 					<img style="width: 100%;" alt="" src="resources/assets/images/smhrd1.png">
 					</div>
+				</div>
+				</div>
 				</div>
 				<div class="window tab-content" role="tabpanel" id="event-tab"
 					style="height: 630px; width: 1290px; top: 48.5%">
@@ -219,13 +221,8 @@
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-=======
 			</div>
 		</div>
-		
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-17/sh.git
-
 				<script>
 					document.addEventListener("DOMContentLoaded", function() {
 						// announce-tab 탭의 aria-selected 속성을 true로 변경하고 컨텐츠를 활성화

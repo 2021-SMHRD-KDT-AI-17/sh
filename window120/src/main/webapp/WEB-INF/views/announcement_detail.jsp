@@ -29,34 +29,40 @@
 <body>
 	<div class="window" style="height: 650px; width: 1280px;">
 		<div class="window tab-content" role="tabpanel"
-			style="height: 630px; width: 1290px; top: 48.5%">
+			style="height: 660px; width: 1290px; top: 48.5%">
 			<div class="window-body" style="position: fixed;">
-				<div class="sunken-panel" style="height: 610px; width: 1270px;">
+				<div class="sunken-panel" style="height: 650px; width: 1270px;">
 					<table style="width: 100%;" class="interactive">
-						<thead style="width: 100%;">
+						<thead style="width: 100%; font-size: 30px; text-align: center;">
 							<tr>
-								<td>제목</td>
+								<th style="width: 20%;">제목</th>
 								<td>${announcement.ann_title }</td>
 							</tr>
 							<tr>
-								<td>작성자</td>
+								<th style="width: 20%;">작성자</th>
 								<td>${announcement.teacher_id }</td>
 							</tr>
-
 							<tr>
 								<td colspan="2">내용</td>
 							</tr>
-							<tr>
-								<td colspan="2">${announcement.ann_content }</td>
-							</tr>
 						</thead>
+						<tbody style="width: 100%; font-size: 20px;">
+							<tr>
+								<td colspan="2" style="height: 450px;">${announcement.ann_content }</td>
+							</tr>
+						</tbody>
 					</table>
-						<tr>
-							<td colspan="2"><a href="goAnnouncement"><button>뒤로가기</button></a></td>
-						</tr>
+					<div style="text-align: right; padding: 8px; height: 1%;">
+				<button type="button" style="font-size:15px;" onclick="goBack()">뒤로가기</button>
+			</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 </body>
 </html>
