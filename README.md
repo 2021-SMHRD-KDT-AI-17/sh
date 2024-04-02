@@ -94,7 +94,7 @@
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입/출석QR
+### 로그인 / 회원가입 / 출석QR
 ![image](https://ifh.cc/g/SrA4NT.jpg)
 <br>
 
@@ -112,6 +112,14 @@
 
 ### 반 일정/팀 일정
 ![image](https://ifh.cc/g/ODvqk5.jpg)
+<br>
+
+### 메세지(건의사항/공지사항) /  메세지확인
+![image](https://ifh.cc/g/w2M9rs.jpg)
+<br>
+
+### 팀가입 / 팀정보 보기
+![image](https://ifh.cc/g/w2M9rs.jpg)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
