@@ -90,7 +90,7 @@
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![image](https://ifh.cc/g/aOovp4.jpg)
 <br>
 
 ## 🖥 화면 구성
