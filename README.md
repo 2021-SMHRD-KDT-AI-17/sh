@@ -102,8 +102,8 @@
 ![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 반 일정/팀 일정
+![image](https://ifh.cc/g/ODvqk5.jpg)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
