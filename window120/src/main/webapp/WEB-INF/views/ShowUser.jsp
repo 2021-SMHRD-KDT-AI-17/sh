@@ -65,10 +65,10 @@
                     <table style="width: 100%;" class="interactive">
                     <thead style="width: 100%; text-align: center;">
                         <tr>
-                            <th style="width: 5%; font-size: 30px">No</th>
-                            <th style="width: 20%; font-size: 30px">이름</th>
+                            <th style="width: 3%; font-size: 30px">No</th>
+                            <th style="width: 10%; font-size: 30px">이름</th>
                             <th style="width: 5%; font-size: 30px">당번</th>
-                            <th style="width: 20%; font-size: 30px">전화번호</th>
+                            <th style="width: 15%; font-size: 30px">전화번호</th>
                             <th style="width: 20%; font-size: 30px">이메일</th>
                             <th style="width: 10%; font-size: 30px">입실</th>
                             <th style="width: 10%; font-size: 30px">퇴실</th>
