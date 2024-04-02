@@ -27,10 +27,6 @@
     font-size: 13px;
     color:black;
   }
-  body{
-   background-color: rgb(192, 192, 192);
-  }
-
 
   .fc-daygrid-day-number, .fc-toolbar-title,.fc-col-header-cell-cushion {
     color: black !important; /* 월과 날짜의 색상을 검정색으로 변경 */
@@ -64,8 +60,6 @@
     font-weight: bold;
     font-size: 16px; /* 원하는 크기로 조절하세요 */
   }
-
-  
 </style>
 <link href="resources/assets/css/Calendarcss.css" rel="stylesheet">
 </head>
@@ -124,37 +118,6 @@
         </div>
       </div>
     </div>
-
-
-  <div id="calendar1"></div>
-  <dialog>
-    <div>제목 테스트</div>
-    <br>
-    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
-  </dialog>
-  
-  <!-- 부트스트랩 modal 부분 -->
-  
-<div class="modal fade" id="eventInfoModal" tabindex="-1" aria-labelledby="eventInfoModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eventInfoModalLabel"></h5>
-        <button type="button" data-bs-dismiss="modal" aria-label="Close">X</button>
-      </div>
-      <div class="modal-body">
-        <!-- 이벤트 정보가 여기에 들어갈 것입니다. -->
-        <h3><span id="eventInfoTitle"></span></h3>
-        <h5><span id="eventInfoDday"></span></h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="deleteEventBtn" data-bs-dismiss="modal">삭제</button>
-        <button type="button" data-bs-dismiss="modal">닫기</button>
-      </div>
-    </div>
-  </div>
-</div>
-
   <script>
 
   
@@ -186,13 +149,13 @@
         	    text: "일정 추가하기",
         	    click: function() {
         	        // admin 여부 확인
-        	        var isAdmin = /admin/.test("${loginMember.email}");
+        	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
         	        if (isAdmin) {
         	            // 부트스트랩 모달 열기
         	            $("#exampleModal").modal("show");
         	        } else {
-        	            alert("관리자만 일정을 추가할 수 있습니다.");
+        	            alert("팀장만 일정을 추가할 수 있습니다.");
         	        }
         	    }
         	},
@@ -200,7 +163,7 @@
         	    text: "저장하기",
         	    click: function() {
         	        // 관리자 여부 확인
-        	        var isAdmin = /admin/.test("${loginMember.email}");
+        	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
 
         	        if (isAdmin) {
@@ -218,7 +181,7 @@
         	                console.log(eventData);
         	                $.ajax({
         	                    type: "POST",
-        	                    url: "/controller/saveEvents",
+        	                    url: "tsaveEvents5",
         	                    data: JSON.stringify(eventData),
         	                    contentType: "application/json",
         	                    success: function(res) {
@@ -229,12 +192,12 @@
         	                    },
         	                    error: function(xhr, status, error) {
         	                        console.error("서버 요청 실패:", error);
-        	                        alert("이벤트 저장에 실패했습니다.");
+        	                        
         	                    }
         	                });
         	            }
         	        } else {
-        	            alert("관리자만 이벤트를 저장할 수 있습니다.");
+        	            alert("팀장만 이벤트를 저장할 수 있습니다.");
         	        }
         	    }
         	},
@@ -318,134 +281,169 @@
       	        });
       	    }
         },
-
           
-          returnButton: {
-        	    text: "돌아가기",
-        	    click: function() {
-        	        // 원래 캘린더 데이터를 다시 불러와서 캘린더를 초기화
-        	        $.ajax({
-        	            type: "POST", // POST 요청을 통해 데이터를 받아옴
-        	            url: "Test2", // 캘린더 데이터를 반환하는 엔드포인트 URL
-        	            dataType: "json",
-        	            success: function(Test2) {
-        	                // 이벤트를 담을 배열 선언
-        	                const eventArray = [];
-        	                Test2.forEach(function(res) {
-        	                    eventArray.push({
-        	                        title: res.title,
-        	                        start: res.start,
-        	                        end: res.end,
-        	                        backgroundColor: res.backgroundColor,
-        	                    });
-        	                });
-        	                
-        	                // 캘린더 초기화 및 새로운 이벤트 소스 추가
-        	                calendar.removeAllEvents();
-        	                calendar.addEventSource(eventArray);
-        	                
-        	                // 성공 메시지 표시
-        	                alert("원래 캘린더로 돌아왔습니다.");
-        	            },
-        	            error: function(xhr, status, error) {
-        	                // 오류 처리
-        	                console.error("서버 요청 실패:", error);
-        	                alert("원래 캘린더를 불러오는데 실패했습니다.");
-        	            }
-        	        });
-        	    }
-        	}
-
+        CalButton: {
+      	    text: "반캘린더",
+      	    click: function() {
+      	        // 원래 캘린더 데이터를 다시 불러와서 캘린더를 초기화
+      	        $.ajax({
+      	            type: "POST", // POST 요청을 통해 데이터를 받아옴
+      	            url: "Test2", // 캘린더 데이터를 반환하는 엔드포인트 URL
+      	            dataType: "json",
+      	            success: function(Test2) {
+      	                // 이벤트를 담을 배열 선언
+      	                const eventArray = [];
+      	                Test2.forEach(function(res) {
+      	                    eventArray.push({
+      	                        title: res.title,
+      	                        start: res.start,
+      	                        end: res.end,
+      	                        backgroundColor: res.backgroundColor,
+      	                    });
+      	                });
+      	                
+      	                // 캘린더 초기화 및 새로운 이벤트 소스 추가
+      	                calendar.removeAllEvents();
+      	                calendar.addEventSource(eventArray);
+      	                
+      	                // 성공 메시지 표시
+      	                alert("반 캘린더 화면으로 갑니다");
+      	            },
+      	            error: function(xhr, status, error) {
+      	                // 오류 처리
+      	                console.error("서버 요청 실패:", error);
+      	                alert("반 캘린더 화면 로딩이 실패했습니다.");
+      	            }
+      	        });
+      	    }
+      	},
         
-        },
-        eventClick: function(event) {
-            console.log("이벤트클릭");
+        returnButton: {
+      	    text: "돌아가기",
+      	    click: function() {
+      	        // 원래 캘린더 데이터를 다시 불러와서 캘린더를 초기화
+      	        $.ajax({
+      	            type: "POST", // POST 요청을 통해 데이터를 받아옴
+      	            url: "tTest25", // 캘린더 데이터를 반환하는 엔드포인트 URL
+      	            dataType: "json",
+      	            success: function(Test2) {
+      	                // 이벤트를 담을 배열 선언
+      	                const eventArray = [];
+      	                Test2.forEach(function(res) {
+      	                    eventArray.push({
+      	                        title: res.title,
+      	                        start: res.start,
+      	                        end: res.end,
+      	                        backgroundColor: res.backgroundColor,
+      	                    });
+      	                });
+      	                
+      	                // 캘린더 초기화 및 새로운 이벤트 소스 추가
+      	                calendar.removeAllEvents();
+      	                calendar.addEventSource(eventArray);
+      	                
+      	                // 성공 메시지 표시
+      	                alert("원래 캘린더로 돌아왔습니다.");
+      	            },
+      	            error: function(xhr, status, error) {
+      	                // 오류 처리
+      	                console.error("서버 요청 실패:", error);
+      	                alert("원래 캘린더를 불러오는데 실패했습니다.");
+      	            }
+      	        });
+      	    }
+      	}
 
-            // 선택한 이벤트 정보를 전역 변수에 저장합니다.
-            selectedEvent = event;
+      
+      },
+      eventClick: function(event) {
+          console.log("이벤트클릭");
 
-            // 이벤트의 시작 날짜 가져오기
-            var eventStartDate = event.event.start;
+          // 선택한 이벤트 정보를 전역 변수에 저장합니다.
+          selectedEvent = event;
 
-            // 현재 날짜 가져오기
-            var currentDate = new Date();
+          // 이벤트의 시작 날짜 가져오기
+          var eventStartDate = event.event.start;
 
-            // D-day 계산
-            var timeDiff = eventStartDate.getTime() - currentDate.getTime();
-            var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+          // 현재 날짜 가져오기
+          var currentDate = new Date();
 
-            // D-day 표시 문자열 설정
-            var dDayString = '';
-            if (dayDiff > 0) {
-                dDayString = 'D-' + dayDiff; // 이벤트가 남은 경우
-            } else if (dayDiff === 0) {
-                dDayString = 'D-day'; // 이벤트가 오늘인 경우
-            } else {
-                dDayString = 'D+' + Math.abs(dayDiff); // 이벤트가 지난 경우
-            }
+          // D-day 계산
+          var timeDiff = eventStartDate.getTime() - currentDate.getTime();
+          var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-            // 선택한 이벤트의 정보를 모달에 표시합니다.
-            $("#eventInfoTitle").text(event.event.title);
-            $("#eventInfoStart").text(event.event.startStr);
-            $("#eventInfoEnd").text(event.event.endStr);
-            $("#eventInfoDday").text(dDayString);
+          // D-day 표시 문자열 설정
+          var dDayString = '';
+          if (dayDiff > 0) {
+              dDayString = 'D-' + dayDiff; // 이벤트가 남은 경우
+          } else if (dayDiff === 0) {
+              dDayString = 'D-day'; // 이벤트가 오늘인 경우
+          } else {
+              dDayString = 'D+' + Math.abs(dayDiff); // 이벤트가 지난 경우
+          }
 
-            // 부트스트랩 모달 열기
-            $("#eventInfoModal").modal("show");
-        },
-        
+          // 선택한 이벤트의 정보를 모달에 표시합니다.
+          $("#eventInfoTitle").text(event.event.title);
+          $("#eventInfoStart").text(event.event.startStr);
+          $("#eventInfoEnd").text(event.event.endStr);
+          $("#eventInfoDday").text(dDayString);
 
-        // 해더에 표시할 툴바
-        headerToolbar: {
-          left: 'prev,next today,myCustomButton,mySaveButton',
-          center: 'title',
-          right: 'firstButton,secondButton,thirdButton,returnButton'
-        },
-        initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
-        // initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
-        navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
-        editable: true, // 수정 가능?
-        selectable: true, // 달력 일자 드래그 설정가능
-        nowIndicator: true, // 현재 시간 마크
-        dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
-        locale: 'ko', // 한국어 설정
-        eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
-          console.log(obj);
-        },
-        eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
-          console.log(obj);
-        },
-        eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
-          console.log(obj);
-        },
-        select: function(arg) {
-        	  // 현재 로그인한 사용자가 admin 인지 확인
-        	        var isAdmin = /admin/.test("${loginMember.email}");
+          // 부트스트랩 모달 열기
+          $("#eventInfoModal").modal("show");
+      },
+      
+
+      // 해더에 표시할 툴바
+      headerToolbar: {
+        left: 'prev,next today,myCustomButton,mySaveButton',
+        center: 'title',
+        right: 'firstButton,secondButton,thirdButton,CalButton,returnButton'
+      },
+      initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+      // initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+      navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+      editable: true, // 수정 가능?
+      selectable: true, // 달력 일자 드래그 설정가능
+      nowIndicator: true, // 현재 시간 마크
+      dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+      locale: 'ko', // 한국어 설정
+      eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
+        console.log(obj);
+      },
+      eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
+        console.log(obj);
+      },
+      eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
+        console.log(obj);
+      },
+      select: function(arg) {
+      	  // 현재 로그인한 사용자가 admin 인지 확인
+      	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
 
-        	  if (isAdmin) {
-        	    var title = prompt('Event Title:');
-        	    if (title) {
-        	      calendar.addEvent({
-        	        title: title,
-        	        start: arg.start,
-        	        end: arg.end,
-        	        allDay: arg.allDay
-        	      })
-        	    }
-        	  } else {
-        	    alert("관리자만 이벤트를 생성할 수 있습니다.");
-        	  }
+      	  if (isAdmin) {
+      	    var title = prompt('Event Title:');
+      	    if (title) {
+      	      calendar.addEvent({
+      	        title: title,
+      	        start: arg.start,
+      	        end: arg.end,
+      	        allDay: arg.allDay
+      	      })
+      	    }
+      	  } else {
+      	    alert("팀장만 이벤트를 생성할 수 있습니다.");
+      	  }
 
-        	  calendar.unselect();
-        	},
+      	  calendar.unselect();
+      	},
         //데이터 가져오는 이벤트
 eventSources: [
     // 데이터베이스에서 가져온 캘린더 정보를 이벤트로 추가합니다.
  	{
 	    events: function(info, successCallback, failureCallback) {
 	        $.ajax({
-	            url: "Test2",
+	            url: "tTest25",
 	      	  	dataType:"json",
 	            success: function(Test2) {
 	                // 이벤트에 넣을 배열 선언하기
@@ -504,43 +502,43 @@ eventSources: [
       calendar.render();
       
       $("#deleteEventBtn").on("click", function() {
-    	    var isAdmin = /admin/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
+  	    var isAdmin = /0/.test("${loginMember.rank_num}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
 
-    	    if (isAdmin) {
-    	        // 확인 다이얼로그를 통해 사용자에게 삭제 여부를 물어봅니다.
-    	        if (confirm("이벤트를 삭제하시겠습니까?")) {
-    	            // 선택한 이벤트의 정보를 가져옵니다.
-    	            var title = selectedEvent.event.title;
-    	            var start = selectedEvent.event.startStr;
-    	            var end = selectedEvent.event.endStr;
+  	    if (isAdmin) {
+  	        // 확인 다이얼로그를 통해 사용자에게 삭제 여부를 물어봅니다.
+  	        if (confirm("이벤트를 삭제하시겠습니까?")) {
+  	            // 선택한 이벤트의 정보를 가져옵니다.
+  	            var title = selectedEvent.event.title;
+  	            var start = selectedEvent.event.startStr;
+  	            var end = selectedEvent.event.endStr;
 
-    	            // AJAX를 사용하여 서버로 삭제 요청을 보냅니다.
-    	            $.ajax({
-    	                type: "POST",
-    	                url: "deleteEvent",
-    	                contentType: "application/json",
-    	                data: JSON.stringify({ 
-    	                    title: title,
-    	                    start: start,
-    	                    end: end
-    	                }), // 이벤트의 제목, 시작일, 종료일을 서버에 전달합니다.
-    	                success: function(response) {
-    	                    console.log("이벤트 삭제 요청 성공:", response);
-    	                    
-    	                    // 성공적으로 서버로부터 응답을 받았을 때, 캘린더에서 이벤트를 삭제합니다.
-    	                    selectedEvent.event.remove(); // 캘린더에서 이벤트 삭제
-    	                    $("#eventInfoModal").modal("hide"); // 모달 닫기
-    	                },
-    	                error: function(xhr, status, error) {
-    	                    console.error("서버 요청 실패:", error);
-    	                    alert("이벤트 삭제에 실패했습니다.");
-    	                }
-    	            });
-    	        }
-    	    } else {
-    	        alert("관리자만 이벤트를 삭제할 수 있습니다.");
-    	    }
-    	});
+  	            // AJAX를 사용하여 서버로 삭제 요청을 보냅니다.
+  	            $.ajax({
+  	                type: "POST",
+  	                url: "tdeleteEvent5",
+  	                contentType: "application/json",
+  	                data: JSON.stringify({ 
+  	                    title: title,
+  	                    start: start,
+  	                    end: end
+  	                }), // 이벤트의 제목, 시작일, 종료일을 서버에 전달합니다.
+  	                success: function(response) {
+  	                    console.log("이벤트 삭제 요청 성공:", response);
+  	                    
+  	                    // 성공적으로 서버로부터 응답을 받았을 때, 캘린더에서 이벤트를 삭제합니다.
+  	                    selectedEvent.event.remove(); // 캘린더에서 이벤트 삭제
+  	                    $("#eventInfoModal").modal("hide"); // 모달 닫기
+  	                },
+  	                error: function(xhr, status, error) {
+  	                    console.error("서버 요청 실패:", error);
+  	                  
+  	                }
+  	            });
+  	        }
+  	    } else {
+  	        alert("팀장만 이벤트를 삭제할 수 있습니다.");
+  	    }
+  	});
    
    
       popup.querySelector('button').addEventListener('click',()=>{
@@ -551,7 +549,7 @@ eventSources: [
     });
   })();
   function deleteEvent(eventId) {
-	    var isAdmin = /admin/.test("${loginMember.email}");
+	    var isAdmin = /0/.test("${loginMember.rank_num}");
 
 	    if (isAdmin) {
 	        if (confirm("이벤트를 삭제하시겠습니까?")) {
@@ -564,12 +562,41 @@ eventSources: [
 	            // 서버에서 이벤트 삭제를 확인한 후에만 캘린더에서 이벤트를 삭제하는 것이 좋습니다.
 	        }
 	    } else {
-	        alert("관리자만 이벤트를 삭제할 수 있습니다.");
+	        alert("팀장만 이벤트를 삭제할 수 있습니다.");
 	    }
 	}
 
 	// 모달에서 삭제 버튼 클릭 시 이벤트 삭제
 
 </script>
+
+  <div id="calendar1"></div>
+  <dialog>
+    <div>제목 테스트</div>
+    <br>
+    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
+  </dialog>
+  
+  <!-- 부트스트랩 modal 부분 -->
+  
+<div class="modal fade" id="eventInfoModal" tabindex="-1" aria-labelledby="eventInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventInfoModalLabel"></h5>
+        <button type="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
+        <!-- 이벤트 정보가 여기에 들어갈 것입니다. -->
+        <h3><span id="eventInfoTitle"></span></h3>
+        <h5><span id="eventInfoDday"></span></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteEventBtn" data-bs-dismiss="modal">삭제</button>
+        <button type="button" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

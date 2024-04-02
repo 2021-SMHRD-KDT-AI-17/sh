@@ -149,13 +149,13 @@
         	    text: "일정 추가하기",
         	    click: function() {
         	        // admin 여부 확인
-        	        var isAdmin = /admin/.test("${loginMember.email}");
+        	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
         	        if (isAdmin) {
         	            // 부트스트랩 모달 열기
         	            $("#exampleModal").modal("show");
         	        } else {
-        	            alert("관리자만 일정을 추가할 수 있습니다.");
+        	            alert("팀장만 일정을 추가할 수 있습니다.");
         	        }
         	    }
         	},
@@ -163,7 +163,7 @@
         	    text: "저장하기",
         	    click: function() {
         	        // 관리자 여부 확인
-        	        var isAdmin = /admin/.test("${loginMember.email}");
+        	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
 
         	        if (isAdmin) {
@@ -192,12 +192,12 @@
         	                    },
         	                    error: function(xhr, status, error) {
         	                        console.error("서버 요청 실패:", error);
-        	                        alert("이벤트 저장에 실패했습니다.");
+        	                        
         	                    }
         	                });
         	            }
         	        } else {
-        	            alert("관리자만 이벤트를 저장할 수 있습니다.");
+        	            alert("팀장만 이벤트를 저장할 수 있습니다.");
         	        }
         	    }
         	},
@@ -418,7 +418,7 @@
       },
       select: function(arg) {
       	  // 현재 로그인한 사용자가 admin 인지 확인
-      	        var isAdmin = /admin/.test("${loginMember.email}");
+      	        var isAdmin = /0/.test("${loginMember.rank_num}");
 
 
       	  if (isAdmin) {
@@ -432,7 +432,7 @@
       	      })
       	    }
       	  } else {
-      	    alert("관리자만 이벤트를 생성할 수 있습니다.");
+      	    alert("팀장만 이벤트를 생성할 수 있습니다.");
       	  }
 
       	  calendar.unselect();
@@ -502,7 +502,7 @@ eventSources: [
       calendar.render();
       
       $("#deleteEventBtn").on("click", function() {
-  	    var isAdmin = /admin/.test("${loginMember.email}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
+  	    var isAdmin = /0/.test("${loginMember.rank_num}"); // userEmail은 서버에서 받아온 사용자의 이메일입니다.
 
   	    if (isAdmin) {
   	        // 확인 다이얼로그를 통해 사용자에게 삭제 여부를 물어봅니다.
@@ -531,12 +531,12 @@ eventSources: [
   	                },
   	                error: function(xhr, status, error) {
   	                    console.error("서버 요청 실패:", error);
-  	                    alert("이벤트 삭제에 실패했습니다.");
+  	                    
   	                }
   	            });
   	        }
   	    } else {
-  	        alert("관리자만 이벤트를 삭제할 수 있습니다.");
+  	        alert("팀장만 이벤트를 삭제할 수 있습니다.");
   	    }
   	});
    
@@ -549,7 +549,7 @@ eventSources: [
     });
   })();
   function deleteEvent(eventId) {
-	    var isAdmin = /admin/.test("${loginMember.email}");
+	    var isAdmin = /0/.test("${loginMember.rank_num}");
 
 	    if (isAdmin) {
 	        if (confirm("이벤트를 삭제하시겠습니까?")) {
@@ -562,7 +562,7 @@ eventSources: [
 	            // 서버에서 이벤트 삭제를 확인한 후에만 캘린더에서 이벤트를 삭제하는 것이 좋습니다.
 	        }
 	    } else {
-	        alert("관리자만 이벤트를 삭제할 수 있습니다.");
+	        alert("팀장만 이벤트를 삭제할 수 있습니다.");
 	    }
 	}
 

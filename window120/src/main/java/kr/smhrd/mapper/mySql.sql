@@ -79,7 +79,7 @@ create table comment(
 delete from user_info where name='test2';
 
 
-
+select * from tCalendar3;
 update user_info set point=2 where name='고현우';
 update user_info set point=3 where name='고희청';
 update user_info set point=4 where name='권승호';

@@ -369,6 +369,8 @@
 <!-- ============================================================================================================================================================================= -->   
 
 
+
+
 		<!-- 캘린더 클릭시 나오는 화면 -->
 		<style>
   /* CSS로 iframe 숨기기 */
@@ -395,7 +397,7 @@
            </div>
            <div class="content white">
            		<iframe src="goCalMain" frameborder="0" width="100%" height="500px"></iframe>
-              	<iframe src="gotCalMain" frameborder="0" width="100%" height="500px"></iframe>  
+              	<iframe src="gotCalMain2" frameborder="0" width="100%" height="500px"></iframe>  
                 <input type="radio" name="documents-radio" id="secret-codes" />
                 <input type="radio" name="documents-radio" id="diary" />
                 <label class="file secret-codes" for="secret-codes">
@@ -409,31 +411,46 @@
            </div>
         </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // X 버튼을 눌렀을 때 이벤트 설정
-        document.querySelector('.window.calender .header .close').addEventListener('click', function() {
-            // 두 개의 iframe을 모두 숨김
-            document.querySelectorAll('.window.calender .content.white iframe').forEach(function(iframe) {
-                iframe.style.display = 'none';
-            });
-            // 라벨을 두 개 생성
-            document.querySelector('.file.secret-codes').style.display = 'inline-block';
-            document.querySelector('.file.diary').style.display = 'inline-block';
+document.addEventListener('DOMContentLoaded', function() {
+    // X 버튼을 눌렀을 때 이벤트 설정
+    document.querySelector('.window.calender .header .close').addEventListener('click', function() {
+        // 두 개의 iframe을 모두 숨김
+        document.querySelectorAll('.window.calender .content.white iframe').forEach(function(iframe) {
+            iframe.style.display = 'none';
         });
+        // 라벨을 두 개 생성
+        document.querySelector('.file.secret-codes').style.display = 'inline-block';
+        document.querySelector('.file.diary').style.display = 'inline-block';
+    });
 
-        // 반 캘린더 이미지를 클릭했을 때 이벤트 설정
-        document.querySelector('.file.secret-codes').addEventListener('click', function() {
-            // 첫 번째 iframe 보이기
-            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'block';
-            // 두 번째 iframe 숨기기
-            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'none';
-            // 라벨 숨기기
-            document.querySelector('.file.secret-codes').style.display = 'none';
-            document.querySelector('.file.diary').style.display = 'none';
-        });
+    // 반 캘린더 이미지를 클릭했을 때 이벤트 설정
+    document.querySelector('.file.secret-codes').addEventListener('click', function() {
+        // 첫 번째 iframe 보이기
+        document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'block';
+        // 두 번째 iframe 숨기기
+        document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'none';
+        // 라벨 숨기기
+        document.querySelector('.file.secret-codes').style.display = 'none';
+        document.querySelector('.file.diary').style.display = 'none';
+    });
 
-        // 팀 캘린더 이미지를 클릭했을 때 이벤트 설정
+    // 팀 캘린더 이미지를 클릭했을 때 이벤트 설정
+    document.querySelector('.file.diary').addEventListener('click', function() {
+        // 첫 번째 iframe 숨기기
+        document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+        // 두 번째 iframe 보이기
+        document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+        // 라벨 숨기기
+        document.querySelector('.file.secret-codes').style.display = 'none';
+        document.querySelector('.file.diary').style.display = 'none';
+    });
+
+    // 로그인 멤버의 팀 번호에 따라 iframe 소스 변경
+			<% if (loginMember.getTeam_number() == 25) { %>
         document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain';
+            // 나머지 코드는 동일하게 유지
             // 첫 번째 iframe 숨기기
             document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
             // 두 번째 iframe 보이기
@@ -442,7 +459,73 @@
             document.querySelector('.file.secret-codes').style.display = 'none';
             document.querySelector('.file.diary').style.display = 'none';
         });
-    });
+        <% } else if (loginMember.getTeam_number() == 26) { %>// 팀 번호가 25인 경우
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain2';
+            // 나머지 코드는 동일하게 유지
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+        <%} else if (loginMember.getTeam_number() == 27) { %>// 팀 번호가 27인 경우
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain3';
+            // 나머지 코드는 동일하게 유지
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+        <%} else if (loginMember.getTeam_number() == 28) { %>// 팀 번호가 28인 경우
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain4';
+            // 나머지 코드는 동일하게 유지
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+        <%} else if (loginMember.getTeam_number() == 29) { %>// 팀 번호가 28인 경우
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'gotCalMain5';
+            // 나머지 코드는 동일하게 유지
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+        <%} else{%>
+        document.querySelector('.file.diary').addEventListener('click', function() {
+            // 두 번째 iframe의 소스를 변경하여 다른 팀 캘린더로 로드
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').src = 'goCalMain';
+            // 나머지 코드는 동일하게 유지
+            // 첫 번째 iframe 숨기기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(1)').style.display = 'none';
+            // 두 번째 iframe 보이기
+            document.querySelector('.window.calender .content.white iframe:nth-of-type(2)').style.display = 'block';
+            // 라벨 숨기기
+            document.querySelector('.file.secret-codes').style.display = 'none';
+            document.querySelector('.file.diary').style.display = 'none';
+        });
+        <%}%>
+});
 </script>
 
 <!-- ============================================================================================================================================================================= -->  

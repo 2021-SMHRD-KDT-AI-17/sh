@@ -42,4 +42,90 @@
       AND start = #{start}
       AND end = #{end}
 </delete>
+
+    <select id="tCalList2" resultType="kr.smhrd.entity.tCalendar2">
+    	SELECT * FROM tCalendar2
+    </select>
+    
+      <delete id="tdeleteEvent2" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM tCalendar2
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>  
+
+    <insert id="tinsertEvent2" parameterType="kr.smhrd.entity.tCalendar2">
+    INSERT INTO tCalendar2 (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM tCalendar2
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
+    
+    
+        <select id="tCalList3" resultType="kr.smhrd.entity.tCalendar3">
+    	SELECT * FROM tCalendar3
+    </select>
+    
+      <delete id="tdeleteEvent3" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM tCalendar3
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>  
+
+    <insert id="tinsertEvent3" parameterType="kr.smhrd.entity.tCalendar3">
+    INSERT INTO tCalendar3 (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM tCalendar3
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
+    
+            <select id="tCalList4" resultType="kr.smhrd.entity.tCalendar4">
+    	SELECT * FROM tCalendar4
+    </select>
+    
+      <delete id="tdeleteEvent4" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM tCalendar4
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>  
+
+    <insert id="tinsertEvent4" parameterType="kr.smhrd.entity.tCalendar4">
+    INSERT INTO tCalendar4 (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM tCalendar4
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
+    
+    
+                <select id="tCalList5" resultType="kr.smhrd.entity.tCalendar5">
+    	SELECT * FROM tCalendar5
+    </select>
+    
+      <delete id="tdeleteEvent5" parameterType="kr.smhrd.entity.EventData">
+    DELETE FROM tCalendar5
+    WHERE title = #{title}
+      AND start = #{start}
+      AND end = #{end}
+</delete>  
+
+    <insert id="tinsertEvent5" parameterType="kr.smhrd.entity.tCalendar5">
+    INSERT INTO tCalendar5 (title, start, end, backgroundColor) 
+    SELECT #{title}, #{start}, #{end}, #{backgroundColor} 
+    FROM DUAL
+    WHERE NOT EXISTS (
+        SELECT * FROM tCalendar5
+        WHERE title = #{title} AND start = #{start} AND end = #{end} AND backgroundColor = #{backgroundColor}
+    );
+    </insert>
 </mapper>
