@@ -85,7 +85,7 @@
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://ifh.cc/g/2q9w9q.jpg)
+![image](https://ifh.cc/g/ftAMMx.jpg)
 <br>
 
 ## 📌 ER다이어그램
