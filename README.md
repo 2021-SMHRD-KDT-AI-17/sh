@@ -125,11 +125,11 @@
     <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
   </tr>
   <tr>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
+    <td align="center"><strong>권승호</strong></td>
+    <td align="center"><strong>윤옥산</strong></td>
+    <td align="center"><strong>이봄</strong></td>
+    <td align="center"><strong>박상윤</strong></td>
+    <td align="center"><strong>오현진</strong></td>
   </tr>
   <tr>
     <td align="center"><b>Frontend</b></td>
