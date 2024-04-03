@@ -84,6 +84,10 @@
 ![image](https://ifh.cc/g/TAOB0L.png)
 <br>
 
+## 📌 시스템 아키텍처
+![image](https://ifh.cc/g/yAwvx3.jpg)
+<br>
+
 ## 📌 서비스 흐름도
 ![image](https://ifh.cc/g/RfsvWJ.jpg)
 <br>
@@ -92,9 +96,6 @@
 ![image](https://ifh.cc/g/aOovp4.jpg)
 <br>
 
-## 📌 시스템 아키텍처
-![image](https://ifh.cc/g/yAwvx3.jpg)
-<br>
 
 ## 🖥 화면 구성
 
