@@ -92,6 +92,10 @@
 ![image](https://ifh.cc/g/aOovp4.jpg)
 <br>
 
+## 📌 시스템 아키텍처
+![image](https://ifh.cc/g/yAwvx3.jpg)
+<br>
+
 ## 🖥 화면 구성
 
 ### 로그인 / 회원가입 / 출석QR
