@@ -108,6 +108,9 @@
 
 ### 게시판
 ![image](https://ifh.cc/g/s5YMrQ.jpg)
+
+### 실시간 채팅
+![image](https://ifh.cc/g/gvm607.png)
 <br>
 
 ### 반 일정/팀 일정
