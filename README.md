@@ -99,7 +99,7 @@
 <br>
 
 ### 메인화면
-![image](https://ifh.cc/g/dRamQs.jpg)
+![image](https://ifh.cc/g/hAPkWP.jpg)
 <br>
 
 ### 공지사항 / 진행중인 이벤트
