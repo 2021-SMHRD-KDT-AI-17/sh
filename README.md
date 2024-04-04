@@ -103,8 +103,8 @@
 ![image](https://ifh.cc/g/SrA4NT.jpg)
 <br>
 
-### 메인화면
-![image](https://ifh.cc/g/hAPkWP.jpg)
+### 메인화면 / 채팅
+![image](https://ifh.cc/g/9bl82G.jpg)
 <br>
 
 ### 공지사항 / 진행중인 이벤트
@@ -114,9 +114,6 @@
 ### 게시판
 ![image](https://ifh.cc/g/s5YMrQ.jpg)
 
-### 실시간 채팅
-![image](https://ifh.cc/g/gvm607.png)
-<br>
 
 ### 반 일정/팀 일정
 ![image](https://ifh.cc/g/ODvqk5.jpg)
