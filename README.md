@@ -89,7 +89,7 @@
 <br>
 
 ## 📌 시스템 아키텍처
-![image](https://ifh.cc/g/yAwvx3.jpg)
+![image](https://ifh.cc/g/prCCAQ.png)
 <br>
 
 ## 📌 ER다이어그램
