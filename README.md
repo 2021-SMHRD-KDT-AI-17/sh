@@ -126,7 +126,7 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="https://ifh.cc/g/TfPvsZ.png" width="100" height="100"/></td>
+    <td align="center"><img src="https://ifh.cc/g/Ab3K4n.png" width="100" height="100"/></td>
     <td align="center"><img src="https://ifh.cc/g/YfqlCg.png" width="100" height="100"/></td>
     <td align="center"><img src="https://ifh.cc/g/BDBKs9.png" width="100" height="100"/></td>
     <td align="center"><img src="https://ifh.cc/g/DVsKVL.png" width="100" height="100"/></td>
