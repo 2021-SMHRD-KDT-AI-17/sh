@@ -140,11 +140,11 @@
     <td align="center"><strong>오현진</strong></td>
   </tr>
   <tr>
+    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Kwon0123" target='_blank'>github</a></td>
