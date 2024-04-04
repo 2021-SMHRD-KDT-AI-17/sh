@@ -1,5 +1,6 @@
  # 📎 씨앗(팀명: 스마트인재서야개발원)
 ![image](https://ifh.cc/g/7LKFwz.png)
+<img src="https://ifh.cc/g/7LKFwz.png" width="1500" height="200"/>
 
 
 ## 👀 서비스 소개
