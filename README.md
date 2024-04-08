@@ -177,9 +177,9 @@
  => PyDev 플러그인 설치를 하였으나 플러그인이 제대로 설치되지 않아 jdk버전 변경 후 재설치를 했지만 똑같은 오류가 발생하여 eGovFrame에 전화를 하여 물어보니 eGovFrame측에서도 해결방법을 찾지 못하였다고 연락을 받음
 
 ★ 해결방법
-1. Github 에 Repository 생성 이후 파이썬 코드 업로드
+1. Github 에 Repository 생성 이후 파이썬 코드 업로드<br>
  => 크롬 드라이버, 파이썬 버전 최신화
  => html 요소 선택 후 반복문 사용한 크롤링
 
-2. Github Actions 코드 작성
+2. Github Actions 코드 작성<br>
  => 동적 웹페이지 크롤링에 필요한 selenium 설치
